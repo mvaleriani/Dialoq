@@ -4,7 +4,7 @@
 #root {
   display: flex;
 
-  .server-index-column {
+  .server-column {
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -21,14 +21,14 @@
 
   }
 
-  .room-index-column {
+  .room-column {
     display: flex;
     flex-direction: column;
 
     width: 238px;
     min-width: 238px;
 
-    .room-index-header {
+    .room-column-header {
       width 100%;
       height: 48px;
     }
@@ -38,7 +38,7 @@
       height: auto;
     }
 
-    .account {
+    .account-footer {
       display: flex;
       align-items: center;
       position: relative;
@@ -56,7 +56,7 @@
 
         .online-status {
           position: absolute;
-          
+
           height: 10px;
           width: 10px;
           border-radius: 50%;
@@ -68,6 +68,47 @@
   }
 
   .room-column {
+    display: flex;
+    flex-direction: column;
 
+    .room-header {
+      width: auto;
+      display: flex;
+      flex-direction: row;
+      justify-content: space-between;
+      align-items: center;
+
+      .header-title {
+
+
+        .room-name {
+          color: #fff;
+          font-size: 18px;
+          font-weight: 600;
+        }
+      }
+
+      .header-options {
+
+
+        .header-button{
+          margin-left: 10px;
+          margin-right: 10px;
+        }
+      }
+    }
+
+    .room-content {
+      display: flex;
+      flex-direction: row;
+
+      .room-body {
+
+      }
+
+      .member-index {
+
+      }
+    }
   }
 }

@@ -10,7 +10,6 @@ import {
 
 const App = () => (
   <div>
-
     <Switch>
     </Switch>
   </div>

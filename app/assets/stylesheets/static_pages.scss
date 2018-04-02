@@ -1,3 +1,73 @@
 // Place all the styles related to the StaticPages controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+#root {
+  display: flex;
+
+  .server-index-column {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+
+    width: 70px;
+    min-width: 70px;
+
+    .server-node {
+      height: 50px;
+      width: 50px;
+      border-radius: 50%;
+      background-image: url();
+    }
+
+  }
+
+  .room-index-column {
+    display: flex;
+    flex-direction: column;
+
+    width: 238px;
+    min-width: 238px;
+
+    .room-index-header {
+      width 100%;
+      height: 48px;
+    }
+
+    .room-index {
+      width 100%;
+      height: auto;
+    }
+
+    .account {
+      display: flex;
+      align-items: center;
+      position: relative;
+
+      width 100%;
+      height: 52px;
+      min-height: 52px;
+
+      .profile-icon {
+        height: 30px;
+        width: 30px;
+        border-radius: 50%;
+        background-image: url();
+
+
+        .online-status {
+          position: absolute;
+          
+          height: 10px;
+          width: 10px;
+          border-radius: 50%;
+          border-width: medium;
+          background-color: green;
+        }
+      }
+    }
+  }
+
+  .room-column {
+
+  }
+}

@@ -7,12 +7,19 @@ import {
   Link,
   HashRouter
 } from 'react-router-dom';
+import ServerColumn from './serverColumn/ServerColumn';
+import RoomColumn from './roomColumn/RoomColumn';
+import ChatColumn from './chatColumn/ChatColumn';
+
 
 const App = () => (
-  <div>
-    <Switch>
-    </Switch>
+  <div className="app">
+    <ServerColumn />
+    <RoomColumn />
+    <ChatColumn />
   </div>
 );
 
+// <Switch>
+// </Switch>
 export default App;

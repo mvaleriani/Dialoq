@@ -1,114 +1,147 @@
 // Place all the styles related to the StaticPages controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
-#root {
+
+body{
+  margin: 0px;
+}
+.app {
   display: flex;
+  font-family: sans-serif;
+  color: white;
+}
 
-  .server-column {
+.server-column {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  width: 70px;
+  min-width: 70px;
+  height: 100vh;
+  background-color: #202225;
+
+  .server-node {
+    height: 50px;
+    width: 50px;
+    border-radius: 50%;
+    background-image: url();
+  }
+
+}
+
+.room-column {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  width: 240px;
+  min-width: 240px;
+  height: 100vh;
+  background-color: #2f3136;
+
+  .room-column-header {
+
+    height: 48px;
+  }
+
+  .room-index {
+
+    height: auto;
+  }
+
+  .account-footer {
     display: flex;
-    flex-direction: column;
-    justify-content: center;
+    align-items: center;
+    position: relative;
 
-    width: 70px;
-    min-width: 70px;
 
-    .server-node {
-      height: 50px;
-      width: 50px;
+    height: 52px;
+    min-height: 52px;
+
+    .profile-icon {
+      height: 30px;
+      width: 30px;
       border-radius: 50%;
       background-image: url();
-    }
 
-  }
 
-  .room-column {
-    display: flex;
-    flex-direction: column;
+      .online-status {
+        position: absolute;
 
-    width: 238px;
-    min-width: 238px;
-
-    .room-column-header {
-      width 100%;
-      height: 48px;
-    }
-
-    .room-index {
-      width 100%;
-      height: auto;
-    }
-
-    .account-footer {
-      display: flex;
-      align-items: center;
-      position: relative;
-
-      width 100%;
-      height: 52px;
-      min-height: 52px;
-
-      .profile-icon {
-        height: 30px;
-        width: 30px;
+        height: 10px;
+        width: 10px;
         border-radius: 50%;
-        background-image: url();
+        border-width: medium;
+        background-color: green;
+      }
+    }
+  }
+}
+
+.room {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  
+  width: 100%;
+  height: 100vh;
+
+  background-color: #35393E;
+  .room-header {
+    height: 48px;
+    min-height: 48px;
+
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+
+    .header-title {
 
 
-        .online-status {
-          position: absolute;
 
-          height: 10px;
-          width: 10px;
-          border-radius: 50%;
-          border-width: medium;
-          background-color: green;
-        }
+      .room-name {
+        color: #fff;
+        font-size: 18px;
+        font-weight: 600;
+      }
+    }
+
+    .header-options {
+
+
+      .header-button{
+        margin-left: 10px;
+        margin-right: 10px;
       }
     }
   }
 
-  .room-column {
+  .room-content {
     display: flex;
-    flex-direction: column;
+    flex-direction: row;
 
-    .room-header {
-      width: auto;
-      display: flex;
-      flex-direction: row;
-      justify-content: space-between;
-      align-items: center;
-
-      .header-title {
+    .room-body {
 
 
-        .room-name {
-          color: #fff;
-          font-size: 18px;
-          font-weight: 600;
-        }
+      .message-index {
+
       }
 
-      .header-options {
+      .room-body-footer{
+        height: 94px;
+        min-height: 94px;
 
+        .message-form {
 
-        .header-button{
-          margin-left: 10px;
-          margin-right: 10px;
         }
       }
     }
 
-    .room-content {
-      display: flex;
-      flex-direction: row;
-
-      .room-body {
-
-      }
-
-      .member-index {
-
-      }
+    .member-index {
+      width: 240px;
+      min-width: 240px;
     }
   }
 }

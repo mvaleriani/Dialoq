@@ -10,7 +10,12 @@ class RoomColumn extends React.Component {
   }
 
   render(){
-    
+    return (
+      <nav className="room-column">
+        <label>Room</label>
+        <label>Column</label>
+      </nav>
+    );
   }
 }
 

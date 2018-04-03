@@ -10,6 +10,12 @@ class ServerColumn extends React.Component {
   }
 
   render() {
+    return (
+      <nav className="server-column">
+        <label>Server</label>
+        <label>Column</label>
+      </nav>
+    );
     // const serverNodes = this.props.servers.map(server => {
     //   return (
     //     <ServerNode

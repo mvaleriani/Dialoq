@@ -15,7 +15,6 @@
 
 class User < ApplicationRecord
   validates :username, :password_digest, presence: true
-  validates :email, presence: true, uniqueness: true
   validates :password, length: { minimum: 7 }, allow_nil: true
 
   after_initialize :ensure_session_token
@@ -36,6 +35,11 @@ class User < ApplicationRecord
 
   def is_password?(password)
     BCrypt::Password.new(self.password_digest).is_password?(password)
+  end
+
+  def update_online_status(status)
+    self.online_status = status
+    save!
   end
 
   def reset_session_token!

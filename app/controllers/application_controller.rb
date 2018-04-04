@@ -16,15 +16,13 @@ class ApplicationController < ActionController::Base
     user.reset_session_token!
     session[:session_token] = user.session_token
     @current_user = user
-    @current_user.online_status = "online"
-    save!
+    @current_user.update_online_status("online")
   end
 
   def logout
     current_user.reset_session_token!
     session[:session_token] = nil
-    @current_user.online_status = "offline"
-    save!
+    @current_user.update_online_status("offline")
     @current_user = nil
   end
 

@@ -8,7 +8,45 @@ body{
 .app {
   display: flex;
   font-family: sans-serif;
-  color: white;
+}
+.splash{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+  width: 100vw;
+  background-image: url(https://www.socialpeeks.com/hs-fs/hubfs/fb87712f68f6f09095779d07658f9f03.jpg?t=1522332148336&width=2560&name=fb87712f68f6f09095779d07658f9f03.jpg);
+  background-position: center;
+  background-size: cover;
+  .splash-login-button {
+    text-decoration: none;
+    font-size: 30px;
+    font-family: sans-serif;
+    color: #FFA24F;
+    font-weight: 700;
+
+    border-color: #0C0329;
+    height: 55px;
+    width: 140px;
+    border-radius: 5px;
+    margin-right: 20px;
+    background-color: #0C0329;
+  }
+
+  .splash-signup-button{
+    text-decoration: none;
+    font-size: 30px;
+    font-family: sans-serif;
+    color: #0C0329;
+    font-weight: 700;
+
+    border-color: #FFA24F;
+    height: 55px;
+    width: 140px;
+    border-radius: 5px;
+    margin-left: 20px;
+    background-color: #FFA24F;
+  }
 }
 
 .server-column {
@@ -83,7 +121,7 @@ body{
   display: flex;
   flex-direction: column;
   align-items: center;
-  
+
   width: 100%;
   height: 100vh;
 

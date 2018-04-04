@@ -1,7 +1,9 @@
 import { combineReducers } from 'redux';
-
+import session from './sessionReducer';
+import errors from './errorsReducer';
 const rootReducer = combineReducers({
-  messages: {}
+  session,
+  errors
 });
 
 export default rootReducer;

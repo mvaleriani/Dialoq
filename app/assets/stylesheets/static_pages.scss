@@ -1,13 +1,17 @@
 // Place all the styles related to the StaticPages controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
-
+html, body {
+  overflow: hidden;
+}
 body{
   margin: 0px;
 }
 .app {
   display: flex;
   font-family: sans-serif;
+  width: 100vw;
+  height: 100vh;
 }
 
 
@@ -158,83 +162,23 @@ body{
   }
 }
 
-.server-column {
+.main-page {
   display: flex;
-  flex-direction: column;
-  align-items: center;
-
-  width: 70px;
-  min-width: 70px;
-  height: 100vh;
-  background-color: #202225;
-
-  .server-node {
-    height: 50px;
-    width: 50px;
-    border-radius: 50%;
-    background-image: url();
-  }
-
-}
-
-.room-column {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-
-  width: 240px;
-  min-width: 240px;
-  height: 100vh;
-  background-color: #2f3136;
-
-  .room-column-header {
-
-    height: 48px;
-  }
-
-  .room-index {
-
-    height: auto;
-  }
-
-  .account-footer {
-    display: flex;
-    align-items: center;
-    position: relative;
-
-
-    height: 52px;
-    min-height: 52px;
-
-    .profile-icon {
-      height: 30px;
-      width: 30px;
-      border-radius: 50%;
-      background-image: url();
-
-
-      .online-status {
-        position: absolute;
-
-        height: 10px;
-        width: 10px;
-        border-radius: 50%;
-        border-width: medium;
-        background-color: green;
-      }
-    }
-  }
+  width: 100%;
+  height: 100%;
+  font-family: sans-serif;
+  font-weight: 500;
+  color: white;
+  overflow: hidden;
+  position: absolute;
 }
 
 .room {
   display: flex;
   flex-direction: column;
   align-items: center;
-
-  width: 100%;
-  height: 100vh;
-
   background-color: #35393E;
+  width: 100vw;
   .room-header {
     height: 48px;
     min-height: 48px;
@@ -291,4 +235,70 @@ body{
       min-width: 240px;
     }
   }
+}
+.room-column {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  width: 240px;
+  min-width: 240px;
+  height: 100vh;
+  background-color: #2f3136;
+
+  .room-column-header {
+
+    height: 48px;
+  }
+
+  .room-index {
+
+    height: auto;
+  }
+
+  .account-footer {
+    display: flex;
+    align-items: center;
+    position: relative;
+
+
+    height: 52px;
+    min-height: 52px;
+
+    .profile-icon {
+      height: 30px;
+      width: 30px;
+      border-radius: 50%;
+      background-image: url();
+
+
+      .online-status {
+        position: absolute;
+
+        height: 10px;
+        width: 10px;
+        border-radius: 50%;
+        border-width: medium;
+        background-color: green;
+      }
+    }
+  }
+}
+.server-column {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  width: 70px;
+  min-width: 70px;
+  height: 100vh;
+  background-color: #202225;
+
+  .server-node {
+    height: 50px;
+    width: 50px;
+    border-radius: 50%;
+    background-image: url();
+  }
+
 }

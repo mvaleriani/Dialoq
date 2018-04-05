@@ -12,13 +12,17 @@ import {
 // import ChatColumn from './chatColumn/ChatColumn';
 import { AuthRoute } from '../util/routeUtil';
 import SplashContainer from './splash/SplashContainer';
+//possibly dont need these
 import LoginFormContainer from './sessionForm/LoginFormContainer'
 import SignupFormContainer from './sessionForm/SignupFormContainer'
+
+import MainPageContainer from './mainPage/MainPageContainer';
 
 const App = () => (
   <div className="app">
     <AuthRoute exact path="/" component={SplashContainer} />
 
+    <Route path="/home" component={ MainPageContainer } />
 
   </div>
 );

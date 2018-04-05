@@ -9,11 +9,40 @@ body{
 }
 .app {
   display: flex;
+  justify-content: center;
   font-family: sans-serif;
+  background-color: #2f3136;
 
   width: 100vw;
   height: 100vh;
+  .error-page{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding-top: 75px;
+    Link{
+      width: 400px;
+      height: 400px;
+    }
+    #fail-whale{
+      // margin-top: 75px;
+      width: 600px;
+    }
+    h1{
+      margin-top: 0px;
+      font-weight: 700;
+      font-size: 50px;
+      color: #E7EAF4;
+      text-shadow: 1px 1px #C3C5D8;
+    }
+    span{
+      font-weight: 600;
+      font-size: 25px;
+      color: #D4D7E6;
+    }
+  }
 }
+
 
 
 
@@ -317,17 +346,19 @@ body{
     margin-top: 10px;
     border-radius: 50%;
     background-color: #35393E;
-
+    transition-property: background-color, border-radius;
+    transition-duration: .3s;
     img{
       width: 32px;
       height: 32px;
-      -webkit-user-select: none; 
+      -webkit-user-select: none;
     }
   }
   .server-node:hover{
     background-color: #37a1a78a;
     border-radius: 15px;
     cursor: pointer;
+
   }
   .num-online{
     height: 25px;
@@ -338,7 +369,7 @@ body{
       font-size: 9px;
       font-family: sans-serif;
       font-weight: 600;
-      color: #42464C;
+      color: #C3C5D8;
     }
 
   }

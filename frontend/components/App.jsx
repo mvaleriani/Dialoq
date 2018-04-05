@@ -17,13 +17,14 @@ import LoginFormContainer from './sessionForm/LoginFormContainer'
 import SignupFormContainer from './sessionForm/SignupFormContainer'
 
 import MainPageContainer from './mainPage/MainPageContainer';
-
+import FourOFour from './FourOFour'
 const App = () => (
   <div className="app">
-    <AuthRoute exact path="/" component={SplashContainer} />
-
-    <Route path="/home" component={ MainPageContainer } />
-
+    <Switch>
+      <AuthRoute exact path="/" component={SplashContainer} />
+      <Route path="/home" component={ MainPageContainer } />
+      <Route path="/" component={ FourOFour } />
+    </Switch>
   </div>
 );
 // <ServerColumn />

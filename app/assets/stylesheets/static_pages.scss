@@ -36,9 +36,17 @@ body{
       text-shadow: 1px 1px #C3C5D8;
     }
     span{
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
       font-weight: 600;
       font-size: 25px;
       color: #D4D7E6;
+      img{
+        margin: 10px;
+        height: 50px;
+        opacity: 0.5;
+      }
     }
   }
 }

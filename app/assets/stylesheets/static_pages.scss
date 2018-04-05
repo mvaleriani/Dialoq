@@ -319,24 +319,26 @@ body{
     background-color: #35393E;
 
     img{
-      width: 35px;
-      height: 35px;
+      width: 32px;
+      height: 32px;
+      -webkit-user-select: none; 
     }
   }
   .server-node:hover{
     background-color: #37a1a78a;
-
+    border-radius: 15px;
+    cursor: pointer;
   }
   .num-online{
     height: 25px;
     width: 42px;
-    border-bottom: 1px solid #35393E;
+    border-bottom: 2px solid #35393E;
     padding-top: 5px;
     span{
       font-size: 9px;
-      font-weight: 550;
       font-family: sans-serif;
-      color: gray;
+      font-weight: 600;
+      color: #42464C;
     }
 
   }

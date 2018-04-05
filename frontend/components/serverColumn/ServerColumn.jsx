@@ -13,7 +13,7 @@ class ServerColumn extends React.Component {
     return (
       <nav className="server-column">
         <div className="server-node">
-          <img src="https://i.imgur.com/uNY8jM2.png" />
+          <img src="https://i.imgur.com/uNY8jM2.png" draggable="false"/>
         </div>
         <div className="num-online"><span># ONLINE</span></div>
 

@@ -5,15 +5,20 @@ import React from 'react';
 
 class RoomColumn extends React.Component {
 
+  constructor(props){
+    super(props)
+  }
   componentDidMount() {
     // this.props.fetchRooms(serverId);
   }
 
   render(){
+
     return (
       <nav className="room-column">
         <label>Room</label>
         <label>Column</label>
+        <label>{this.props.currentUser.username}</label>
       </nav>
     );
   }

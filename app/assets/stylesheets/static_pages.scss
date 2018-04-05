@@ -343,6 +343,29 @@ body{
   min-width: 70px;
   height: 100vh;
   background-color: #202225;
+  input:focus{
+    border-color: transparent;
+  }
+  button:focus {outline:0;}
+  #add-server-button{
+    background-color: transparent;
+    border-color: gray;
+    border-radius: 50%;
+    border-width: 2px;
+    border-style: dashed;
+    height: 50px;
+    width: 50px;
+    cursor: pointer;
+    overflow: hidden;
+    margin-top: 10px;
+    transition-property: background-color, border-radius;
+    transition-duration: .3s;
+  }
+  #add-server-button:hover{
+    background-color: #37a1a78a;
+    border-radius: 15px;
+    border-color: white;
+  }
 
   .server-node {
     display: flex;
@@ -362,13 +385,13 @@ body{
       -webkit-user-select: none;
     }
   }
-  .server-node:hover{
+  .server-node:hover {
     background-color: #37a1a78a;
     border-radius: 15px;
     cursor: pointer;
 
   }
-  .num-online{
+  .num-online {
     height: 25px;
     width: 42px;
     border-bottom: 2px solid #35393E;

@@ -36,31 +36,37 @@ class SessionForm extends React.Component {
   }
 
   render() {
+    let formGreeting = '';
+    if (this.props.formType === 'login') {
+      formGreeting = 'Welcome back!'
+    } else {
+      formGreeting = 'Come chat with us!'
+    }
+
     return (
-      <div className="login-form-container">
+      <div className={this.props.formType}>
         <form onSubmit={this.handleSubmit} className="login-form-box">
-          <h1>Come chat with us!</h1>
-          <br/>
-          Please {this.props.formType} or {this.props.navLink}
-          {this.renderErrors()}
+          <h3>{formGreeting}</h3>
+
+          <span>{this.renderErrors()}</span>
           <div className="login-form">
-            <br/>
-            <label>Username:
+
+            <h3>Username:
               <input type="text"
                 value={this.state.username}
                 onChange={this.update('username')}
                 className="login-input"
               />
-            </label>
-            <br/>
-            <label>Password:
+          </h3>
+
+            <h3>Password:
               <input type="password"
                 value={this.state.password}
                 onChange={this.update('password')}
                 className="login-input"
               />
-            </label>
-            <br/>
+          </h3>
+
             <input className="session-submit" type="submit" value={this.props.formType} />
           </div>
         </form>

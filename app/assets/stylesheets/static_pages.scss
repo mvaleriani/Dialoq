@@ -9,6 +9,40 @@ body{
   display: flex;
   font-family: sans-serif;
 }
+
+
+
+.login {
+  border-radius: 5px;
+  border-color: #E4406E;
+  background-color: none;
+  font-family: sans-serif;
+  color: #FFA24F;
+  padding: 10px;
+  span{
+    font-size: 10px;
+    ul {
+      margin-right: 37px;
+      list-style: none;
+    }
+  }
+}
+.signup {
+  border-radius: 5px;
+  border-color: #FFA24F;
+  background-color: none;
+  font-family: sans-serif;
+  color: #0C0329;
+  padding: 10px;
+  span{
+    font-size: 10px;
+    ul {
+      margin-right: 37px;
+      list-style: none;
+    }
+  }
+}
+
 .splash{
   display: flex;
   align-items: center;
@@ -18,34 +52,109 @@ body{
   background-image: url(https://www.socialpeeks.com/hs-fs/hubfs/fb87712f68f6f09095779d07658f9f03.jpg?t=1522332148336&width=2560&name=fb87712f68f6f09095779d07658f9f03.jpg);
   background-position: center;
   background-size: cover;
+
+  a { margin: 15px; }
+
+
+  .login-form{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  .login{
+    height: 20vh;
+    min-height: 170px;
+  }
+
+  .signup-form{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+  }
+  .signup{
+    height: 20vh;
+    min-height: 170px;
+  }
+  button:focus {outline:0;}
+
   .splash-login-button {
-    text-decoration: none;
+    margin-right: 30px;
+    overflow: hidden;
     font-size: 30px;
     font-family: sans-serif;
     color: #FFA24F;
     font-weight: 700;
-
+    .session-submit{
+      margin: 7px;
+      font-size: 12px;
+    }
+    .session-submit:hover{
+      background-color: #f7a66c;
+    }
     border-color: #0C0329;
     height: 55px;
+    // min-height: 235px;
+    max-height: 280px;
     width: 140px;
     border-radius: 5px;
-    margin-right: 20px;
     background-color: #0C0329;
+    h3{
+      font-size: 20px;
+      margin: 0px;
+    }
+    input{
+      border-style: none;
+      border-radius: 5px;
+      background-color: #ffbccd;
+      padding: 5px;
+      margin-bottom: 5px;
+    }
+  }
+  .splash-login-button:hover{
+    background-color: #E4406E;
+    border-color: #E4406E;
+    cursor: pointer;
   }
 
+
   .splash-signup-button{
-    text-decoration: none;
+
     font-size: 30px;
     font-family: sans-serif;
     color: #0C0329;
     font-weight: 700;
-
+    overflow: hidden;
+    .session-submit{
+      margin: 7px;
+      font-size: 12px;
+    }
+    .session-submit:hover{
+      background-color: #4c4577;
+    }
     border-color: #FFA24F;
     height: 55px;
-    width: 140px;
+    // min-height: 235px;
+    max-height: 280px;
+    width: 150px;
     border-radius: 5px;
-    margin-left: 20px;
     background-color: #FFA24F;
+    h3{
+      font-size: 20px;
+      margin: 0px;
+    }
+    input{
+      border-style: none;
+      border-radius: 5px;
+      background-color: #ffbccd;
+      padding: 5px;
+      margin-bottom: 5px;
+    }
+  }
+  .splash-signup-button:hover{
+    background-color: #E4406E;
+    border-color: #E4406E;
+    cursor: pointer;
   }
 }
 

@@ -10,16 +10,16 @@ import {
 // import ServerColumn from './serverColumn/ServerColumn';
 // import RoomColumn from './roomColumn/RoomColumn';
 // import ChatColumn from './chatColumn/ChatColumn';
+import { AuthRoute } from '../util/routeUtil';
 import SplashContainer from './splash/SplashContainer';
 import LoginFormContainer from './sessionForm/LoginFormContainer'
 import SignupFormContainer from './sessionForm/SignupFormContainer'
 
 const App = () => (
   <div className="app">
-    <Route exact path="/" component={SplashContainer} />
-    <Route path="/login" component={LoginFormContainer} />
-    <Route path="/signup" component={SignupFormContainer} />
-    
+    <AuthRoute exact path="/" component={SplashContainer} />
+
+
   </div>
 );
 // <ServerColumn />

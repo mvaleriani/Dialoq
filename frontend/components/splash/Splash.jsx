@@ -89,7 +89,7 @@ class Splash extends React.Component {
 
         <Collapse isOpened={true}>
           <button onClick={handleSignupClick} style={this.state.signupButtonStyle} className="splash-signup-button">
-            <label style={this.state.labelMargin} id="login-label">Sign Up</label>
+            <label style={this.state.labelMargin} id="signup-label">Sign Up</label>
             <Collapse className="signup-collapse" isOpened={this.state.signupOpened} springConfig={presets.noWobble}>
               <SignupFormContainer />
             </Collapse>

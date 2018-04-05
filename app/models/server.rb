@@ -1,2 +1,3 @@
 class Server < ApplicationRecord
+  
 end

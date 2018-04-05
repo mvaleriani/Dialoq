@@ -12,8 +12,11 @@ class ServerColumn extends React.Component {
   render() {
     return (
       <nav className="server-column">
-        <label>Server</label>
-        <label>Column</label>
+        <div className="server-node">
+          <img src="https://i.imgur.com/uNY8jM2.png" />
+        </div>
+        <div className="num-online"><span># ONLINE</span></div>
+
       </nav>
     );
     // const serverNodes = this.props.servers.map(server => {

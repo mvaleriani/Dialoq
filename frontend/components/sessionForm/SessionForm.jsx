@@ -37,18 +37,24 @@ class SessionForm extends React.Component {
 
   render() {
     let formGreeting = '';
+
+
     if (this.props.formType === 'login') {
       formGreeting = 'Welcome back!'
     } else {
       formGreeting = 'Come chat with us!'
     }
 
+    if (this.props.errors.length !== 0 && this.props.formType === 'login') {
+      formGreeting = (<span>{this.renderErrors()}</span>);
+    }
+
     return (
       <div className={this.props.formType}>
         <form onSubmit={this.handleSubmit} className="login-form-box">
-          <h3>{formGreeting}</h3>
+          <h3 id="form-greeting">{formGreeting}</h3>
 
-          <span>{this.renderErrors()}</span>
+
           <div className="login-form">
 
             <h3>Username:

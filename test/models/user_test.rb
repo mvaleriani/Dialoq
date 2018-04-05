@@ -3,11 +3,10 @@
 # Table name: users
 #
 #  id              :integer          not null, primary key
-#  username        :string
-#  email           :string
-#  password_digest :string
-#  session_token   :string
-#  image_url       :string
+#  username        :string           not null
+#  password_digest :string           not null
+#  session_token   :string           not null
+#  image_url       :string           not null
 #  online_status   :string           default("online")
 #  created_at      :datetime         not null
 #  updated_at      :datetime         not null

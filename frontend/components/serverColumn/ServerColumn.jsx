@@ -16,7 +16,6 @@ class ServerColumn extends React.Component {
           <img src="https://i.imgur.com/uNY8jM2.png" draggable="false"/>
         </div>
         <div className="num-online"><span># ONLINE</span></div>
-
       </nav>
     );
     // const serverNodes = this.props.servers.map(server => {

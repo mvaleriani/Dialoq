@@ -1,7 +1,10 @@
 import React from 'react';
-// import RoomColumnHeader from './RoomColumnHeader';
+import HeaderContainer from './header/HeaderContainer';
+import IndexContainer from './index/IndexContainer';
+import FooterContainer from './footer/FooterContainer';
 // import RoomIndex from './RoomIndex';
 // import AccountFooter from './AccountFooter';
+
 
 class RoomColumn extends React.Component {
 
@@ -16,9 +19,9 @@ class RoomColumn extends React.Component {
 
     return (
       <nav className="room-column">
-        <label>Room</label>
-        <label>Column</label>
-        <label>{this.props.currentUser.username}</label>
+        <HeaderContainer />
+        <IndexContainer />
+        <FooterContainer />
       </nav>
     );
   }

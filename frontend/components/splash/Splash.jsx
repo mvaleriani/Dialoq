@@ -1,7 +1,7 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import {Collapse} from 'react-collapse';
-import {presets} from 'react-motion'
+import {presets} from 'react-motion';
 import LoginFormContainer from '../sessionForm/LoginFormContainer';
 import SignupFormContainer from '../sessionForm/SignupFormContainer';
 // let toggle = false;

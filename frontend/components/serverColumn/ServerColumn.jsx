@@ -36,7 +36,7 @@ class ServerColumn extends React.Component {
       }
     });
     this.buttonAnim.pause();
-    setSpeed(1);
+    this.buttonAnim.setSpeed(1.7);
   }
 
   handleAddServerClick(e){

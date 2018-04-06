@@ -32,7 +32,7 @@ class Header extends React.Component {
       }
     });
     this.settingsAnim.pause();
-    setSpeed(1);
+    this.settingsAnim.setSpeed(1.8);
   }
 
   settingsClick(e){

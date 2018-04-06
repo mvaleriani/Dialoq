@@ -1,5 +1,7 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
+import {Collapse} from 'react-collapse';
+import {presets} from 'react-motion';
 
 class Index extends React.Component {
 
@@ -10,14 +12,21 @@ class Index extends React.Component {
 
   }
 
+  handle
+
   render(){
 
     return (
+
       <section className="room-index">
         <button className="chategory">Chategory</button>
-        <div className="room-link">Link to Room</div>
-        <div className="room-link">Link to Room</div>
+        <div className="room-link">Link to Room 1</div>
+        <div className="room-link">Link to Room 2</div>
+
+
+
       </section>
+
     );
   }
 }

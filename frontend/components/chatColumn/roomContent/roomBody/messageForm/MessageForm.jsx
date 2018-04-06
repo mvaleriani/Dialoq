@@ -12,7 +12,7 @@ class MessageForm extends React.Component {
         <div id="spacer"></div>
         <section id="form-presentation">
           <button id="add-file"></button>
-          <input type="text" id="message-input"/>
+          <textarea type="text" id="message-input"/>
           <button id="emoji-input"></button>
         </section>
       </section>

@@ -2,6 +2,7 @@ import React from 'react';
 import NavbarContainer from './navbar/NavbarContainer';
 import RoomContentContainer from './roomContent/RoomContentContainer';
 
+
 class ChatColumn extends React.Component {
 
   componentDidMount() {
@@ -13,6 +14,7 @@ class ChatColumn extends React.Component {
       <section className="room">
         <NavbarContainer />
         <RoomContentContainer />
+  
       </section>
     )
   }

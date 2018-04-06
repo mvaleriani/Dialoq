@@ -1,6 +1,6 @@
 import React from 'react';
 import RoomBodyContainer from './roomBody/RoomBodyContainer';
-
+import MemberIndexContainer from './memberIndex/MemberIndexContainer';
 class RoomContent extends React.Component {
 
   componentDidMount() {
@@ -11,6 +11,7 @@ class RoomContent extends React.Component {
     return (
       <section className="room-content">
         <RoomBodyContainer />
+        <MemberIndexContainer />
       </section>
     )
   }

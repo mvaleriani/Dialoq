@@ -1,4 +1,5 @@
 import React from 'react';
+import NavbarContainer from './navbar/NavbarContainer';
 
 class ChatColumn extends React.Component {
 
@@ -9,8 +10,7 @@ class ChatColumn extends React.Component {
   render(){
     return (
       <section className="room">
-        <label>Chat</label>
-        <label>Column</label>
+        <NavbarContainer />
       </section>
     )
   }

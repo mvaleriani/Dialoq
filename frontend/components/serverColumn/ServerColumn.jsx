@@ -13,6 +13,7 @@ class ServerColumn extends React.Component {
     this.animDir = -1;
     this.dir = []
   }
+
   componentDidMount() {
     // this.props.fetchServers();
     let addButton = document.getElementById('add-server-button');

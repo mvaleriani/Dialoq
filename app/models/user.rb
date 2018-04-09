@@ -22,6 +22,30 @@ class User < ApplicationRecord
 
   attr_reader :password
 
+  has_many :server_memberships,
+    foreign_key: :user_id,
+    class_name: :ServerMembership
+
+  has_many :servers,
+    through: :server_memberships,
+    source: :server
+
+  has_many :frienships,
+    foreign_key: :user_id,
+    class_name: :Frienship
+
+  has_many :friends,
+    through: :frienships,
+    source: :friend
+
+  has_many :dm_room_memberships,
+    foreign_key: :user_id,
+    class_name: :DmRoomMembership
+
+  has_many :dm_rooms,
+    through: :dm_room_memberships,
+    source: :room
+
   def self.find_by_credentials(username, password)
     user = User.find_by(username: username)
     return nil unless user

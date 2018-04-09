@@ -1,0 +1,23 @@
+# == Schema Information
+#
+# Table name: rooms
+#
+#  id           :integer          not null, primary key
+#  name         :string           not null
+#  chategory_id :integer
+#  server_id    :integer
+#  created_at   :datetime         not null
+#  updated_at   :datetime         not null
+#
+
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  name: MyString
+  chategory_id: 1
+  server_id: 1
+
+two:
+  name: MyString
+  chategory_id: 1
+  server_id: 1

@@ -15,5 +15,21 @@ class Server < ApplicationRecord
   validates :name, uniqueness: true, presence: true
   validates :icon_url, presence: true
 
-  
+  has_many :memberships,
+    foreign_key: :server_id,
+    class_name: :ServerMembership
+
+  has_many :members,
+    through: :memberships,
+    source: :user
+
+  has_many :chategories,
+    foreign_key: :server_id,
+    class_name: :Chategory
+
+  has_many :rooms,
+    foreign_key: :server_id,
+    class_name: :Room
+
+
 end

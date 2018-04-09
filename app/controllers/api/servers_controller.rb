@@ -3,6 +3,7 @@ class Api::ServersController < ApplicationController
     @server = Server.new(server_params)
 
     if @server.save!
+      #create ServerMembership with current_user.id and @server.id
       render "api/servers/show"
     else
       render json: @server.errors.full_messages, status: 422
@@ -17,6 +18,6 @@ class Api::ServersController < ApplicationController
 
   private
   def server_params
-    params.require(:server).permit(:serverId, :name, :adminId, :iconUrl, :dmStatus)
+    params.require(:server).permit(:server_id, :name, :admin_id, :icon_url, :dm_status)
   end
 end

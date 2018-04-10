@@ -1,6 +1,7 @@
 import { connect } from 'react-redux';
 import React from 'react';
 import RoomColumn from './RoomColumn';
+import {withRouter} from 'react-router'
 // import { fetchRooms } from '../../actions/roomColumnActions';
 
 const mapStateToProps = (state, ownProps) => {
@@ -12,7 +13,7 @@ const mapDispatchToProps = dispatch => ({
   // fetchRooms: serverId => dispatch(fetchRooms(serverId))
 });
 
-export default connect(
+export default withRouter(connect(
   mapStateToProps,
   mapDispatchToProps
-)(RoomColumn);
+)(RoomColumn));

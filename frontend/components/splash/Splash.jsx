@@ -23,6 +23,7 @@ class Splash extends React.Component {
   }
 
 
+
   render(){
 
 
@@ -75,6 +76,30 @@ class Splash extends React.Component {
       }
     }
 
+    const handleDemoClick = (e) => {
+      e.preventDefault();
+      let username = 'demo_user';
+      let password = 'demo_password';
+
+      this.setState({loginOpened: true});
+      this.setState({loginButtonStyle: {
+            width: '250px',
+            height: '30vh',
+            backgroundColor: '#E4406E',
+            borderColor: '#E4406E',
+            minHeight: '280px',
+            labelMargin: {margin: '7px'}}
+          });
+      this.setState({signupButtonStyle: {padding: '7px'}});
+
+
+      const username_field = document.getElementById('login-username');
+      const password_field = document.getElementById('login-password');
+      console.log(username_field);
+      username_field.value = username;
+      password_field.value = password;
+    }
+
     return (
       <section className="splash">
 
@@ -96,6 +121,7 @@ class Splash extends React.Component {
           </button>
         </Collapse>
 
+        <button id="demo-button" onClick={handleDemoClick}>Demo</button>
       </section>
     );
   }

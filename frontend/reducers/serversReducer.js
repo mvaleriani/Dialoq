@@ -1,13 +1,13 @@
 import merge from 'lodash/merge';
 
-import { RECEIVE_ALL_SERVERS,
+import { RECEIVE_USER_SERVERS,
          RECEIVE_SINGLE_SERVER,
          LEAVE_SERVER } from '../actions/serverActions'
 
 const serversReducer = (oldState = {}, action) => {
   Object.freeze(oldState);
   switch (action.type) {
-    case RECEIVE_ALL_SERVERS:
+    case RECEIVE_USER_SERVERS:
       return merge({}, action.servers);
     case RECEIVE_SINGLE_SERVER:
       return merge({}, oldState, {[action.server.id]: action.server});

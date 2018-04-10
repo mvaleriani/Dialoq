@@ -3,9 +3,9 @@ import React from 'react';
 import Footer from './Footer';
 // import {  } from '../../actions/...';
 
-const mapStateToProps = (state, ownProps) => ({
-
-});
+const mapStateToProps = (state, ownProps) => {
+  return ({currentUser: state.session.currentUser});
+};
 
 const mapDispatchToProps = dispatch => ({
 

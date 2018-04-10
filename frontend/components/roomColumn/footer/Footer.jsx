@@ -18,8 +18,8 @@ class Footer extends React.Component {
           <aside className="online-status"></aside>
         </div>
         <section className="user-info">
-          <span>currentUser</span>
-          <span>userId</span>
+          <span>{this.props.currentUser.username}</span>
+          <span>#{this.props.currentUser.id}</span>
         </section>
         <button className="mic-toggle"></button>
         <button className="headphone-toggle"></button>

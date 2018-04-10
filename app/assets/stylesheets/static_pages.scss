@@ -88,10 +88,25 @@ button:focus {outline:0;}
   }
 }
 
+#demo-button{
+  border-radius: 5px;
+  background-color: #3c877c;
+  border-color: #3c877c;
+
+  margin-left: 30px;
+
+  color: #3CA6B0;
+  font-size: 30px;
+  font-weight: 600;
+
+  text-shadow: 1px 1px #3c6984;
+}
+
 .splash{
   display: flex;
   align-items: center;
   justify-content: center;
+
   height: 100vh;
   width: 100vw;
   background-image: url(https://www.socialpeeks.com/hs-fs/hubfs/fb87712f68f6f09095779d07658f9f03.jpg?t=1522332148336&width=2560&name=fb87712f68f6f09095779d07658f9f03.jpg);
@@ -272,7 +287,7 @@ button:focus {outline:0;}
       }
       .search-field{
         height: 28px;
-        width: 144px;
+        width: 114px;
         margin-right: 10px;
         padding-left: 10px;
         padding-right: 10px;
@@ -287,7 +302,7 @@ button:focus {outline:0;}
 
       }
       .search-field:focus{
-        width: 244px;
+        width: 200px;
         outline: 0px;
       }
     }
@@ -358,6 +373,7 @@ button:focus {outline:0;}
           #add-file{
             height: 20px;
             width: 20px;
+            min-width: 20px;
             margin-right: 24px;
             border-radius: 50%;
             background-color: #7E8186;
@@ -373,6 +389,7 @@ button:focus {outline:0;}
           #emoji-input{
             height: 20px;
             width: 20px;
+            min-width: 20px;
             margin-left: 2px;
             border-radius: 50%;
             background-color: #7E8186;
@@ -401,13 +418,14 @@ button:focus {outline:0;}
     .member-index {
       display: flex;
       flex-direction: column;
-
+      overflow: scroll;
       width: 240px;
       min-width: 240px;
       background-color: #2f3136;
       #online-members{
         margin-top: 30px;
         span{
+          font-size: 14px;
           color: #818285;
           margin-left: 30px;
 
@@ -465,7 +483,6 @@ button:focus {outline:0;}
   display: flex;
   flex-direction: column;
   align-items: center;
-  overflow: scroll;
   width: 240px;
   min-width: 240px;
   height: 100vh;
@@ -481,15 +498,16 @@ button:focus {outline:0;}
     border-bottom: 1px solid #202225;
     margin-bottom: 15px;
     span {
+      font-weight: 600;
       margin-left: 20px;
     }
     button{
-      height: 32px;
-      width: 32px;
+      height: 35px;
+      width: 35px;
       border-radius: 4px;
       color: white;
       background-color: transparent;
-      border-color: black;
+      border-color: transparent;
       margin-right: 10px;
     }
     button:hover{
@@ -504,6 +522,8 @@ button:focus {outline:0;}
     display: flex;
     flex-direction: column;
     align-items: center;
+    overflow: scroll;
+
     // padding-top: 16px;
     background-color: inherit;
     .chategory{
@@ -516,14 +536,23 @@ button:focus {outline:0;}
       width: 100%;
     }
     .room-link{
+      font-size: 14px;
       display: flex;
       align-items: center;
-
+      text-decoration: none;
+      color: white;
       border-radius: 4px;
       list-style: none;
       // padding-left: 15px;
       width: 210px;
       height: 32px;
+      min-height: 32px;
+      span{
+        color: #818285;
+        font-size: 16px;
+        margin-left: 5px;
+        margin-right: 7px;
+      }
     }
     .room-link:hover{
       background-color: #42464C;
@@ -601,7 +630,7 @@ button:focus {outline:0;}
   display: flex;
   flex-direction: column;
   align-items: center;
-
+  overflow: scroll;
   width: 70px;
   min-width: 70px;
   height: 100vh;
@@ -617,6 +646,7 @@ button:focus {outline:0;}
     border-width: 1px;
     border-style: dashed;
     height: 50px;
+    min-height: 50px;
     width: 50px;
     cursor: pointer;
     overflow: hidden;
@@ -635,18 +665,30 @@ button:focus {outline:0;}
     justify-content: center;
     align-items: center;
     overflow: hidden;
+
+
     height: 50px;
     width: 50px;
     margin-top: 10px;
     border-radius: 50%;
+    border-color: #35393E;
+
     background-color: #35393E;
     transition-property: background-color, border-radius;
     transition-duration: .3s;
+
     img{
+      // width: 100%;
+      height: 51px;
+      -webkit-user-select: none;
+
+    }
+    #private-messages-icon{
       width: 32px;
       height: 32px;
       -webkit-user-select: none;
     }
+
   }
   .server-node:hover {
     background-color: #37a1a78a;
@@ -664,6 +706,34 @@ button:focus {outline:0;}
       font-weight: 600;
       color: #C3C5D8;
     }
+  }
 
+  #outside-links{
+    width: 100%;
+    height: 50px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 15px;
+    #ol-row-1{
+      display: flex;
+      justify-content: center;
+      height: 50%;
+      width: 100%;
+      #my-github{
+        height: 100%;
+        width: 45%;
+        overflow:hidden;
+        border-radius: 10px;
+        background-color: #C2C4D7;
+        img{
+          height: 100%;
+          width: 100%;
+        }
+      }
+      #my-github:hover{
+        background-color: white;
+      }
+    }
   }
 }

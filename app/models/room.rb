@@ -17,6 +17,7 @@ class Room < ApplicationRecord
 
   belongs_to :chategory,
     foreign_key: :chategory_id,
-    class_name: :Chategory
+    class_name: :Chategory,
+    optional: true
 
 end

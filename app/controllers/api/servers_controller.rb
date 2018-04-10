@@ -1,9 +1,14 @@
 class Api::ServersController < ApplicationController
   def create
     @server = Server.new(server_params)
-
+    @server.admin_id = current_user.id
+    
     if @server.save!
       #create ServerMembership with current_user.id and @server.id
+      @membership = ServerMembership.new()
+      @membership.user_id = current_user.id
+      @membership.server_id = @server.id
+      @membership.save
       render "api/servers/show"
     else
       render json: @server.errors.full_messages, status: 422
@@ -11,10 +16,11 @@ class Api::ServersController < ApplicationController
   end
 
   def delete
+
   end
 
-  def index
-  end
+  # def index
+  # end
 
   private
   def server_params

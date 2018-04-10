@@ -11,9 +11,15 @@ class Api::UsersController < ApplicationController
     end
   end
 
+  def index
+    @server = Server.find(params[:server_id])
+    @server_members = @server.members
+    render "api/users/index"
+  end
+
   private
 
   def user_params
-    params.require(:user).permit(:username, :password, :email, :image_url)
+    params.require(:user).permit(:server_id, :username, :password, :email, :image_url)
   end
 end

@@ -7,26 +7,36 @@ class Index extends React.Component {
 
   constructor(props){
     super(props)
+
   }
+
   componentDidMount() {
 
   }
+  componentWillReceiveProps(nextProps){
+    
+    console.log(nextProps);
+  }
 
-  handle
+  handleChategoryClick(e){
+    e.preventDefault();
+
+  }
 
   render(){
+    const rooms = this.props.rooms.map(room => {
+      return(
+        <Link className="room-link" to={`/server/${room.server_id}/room/${room.id}`}>
+          <span># </span>{room.name}
+        </Link>
+      );
+    });
 
     return (
-
       <section className="room-index">
-        <button className="chategory">Chategory</button>
-        <div className="room-link">Link to Room 1</div>
-        <div className="room-link">Link to Room 2</div>
 
-
-
+        {rooms}
       </section>
-
     );
   }
 }

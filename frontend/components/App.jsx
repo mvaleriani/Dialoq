@@ -7,7 +7,7 @@ import {
   Link,
   HashRouter
 } from 'react-router-dom';
-// import ServerColumn from './serverColumn/ServerColumn';
+import ServerColumnContainer from './serverColumn/ServerColumnContainer';
 // import RoomColumn from './roomColumn/RoomColumn';
 // import ChatColumn from './chatColumn/ChatColumn';
 import { AuthRoute, ProtectedRoute } from '../util/routeUtil';
@@ -23,6 +23,8 @@ const App = () => (
     <Switch>
       <AuthRoute exact path="/" component={SplashContainer} />
       <ProtectedRoute path="/home" component={ MainPageContainer } />
+      <ProtectedRoute exact path="/server/:serverId" component={MainPageContainer} />
+      <ProtectedRoute exact path="/server/:serverId/room/:roomId" component={MainPageContainer} />
       <Route path="/" component={ FourOFour } />
     </Switch>
   </div>

@@ -80,24 +80,8 @@ class Splash extends React.Component {
       e.preventDefault();
       let username = 'demo_user';
       let password = 'demo_password';
-
-      this.setState({loginOpened: true});
-      this.setState({loginButtonStyle: {
-            width: '250px',
-            height: '30vh',
-            backgroundColor: '#E4406E',
-            borderColor: '#E4406E',
-            minHeight: '280px',
-            labelMargin: {margin: '7px'}}
-          });
-      this.setState({signupButtonStyle: {padding: '7px'}});
-
-
-      const username_field = document.getElementById('login-username');
-      const password_field = document.getElementById('login-password');
-      console.log(username_field);
-      username_field.value = username;
-      password_field.value = password;
+      const user = Object.assign({}, {username: 'demo_user', password: 'demo_password'});
+      this.props.login(user)
     }
 
     return (

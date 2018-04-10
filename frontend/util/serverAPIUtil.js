@@ -19,3 +19,10 @@ export const fetchUserServers = () => (
     url: '/api/server_memberships'
   })
 );
+
+export const fetchServerMembers = serverId => (
+  $.ajax({
+    method: 'GET',
+    url: `/api/servers/${serverId}/users`
+  })
+);

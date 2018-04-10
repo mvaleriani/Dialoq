@@ -424,6 +424,10 @@ button:focus {outline:0;}
       background-color: #2f3136;
       #online-members{
         margin-top: 30px;
+        spacer{
+          height: 10px;
+          width: 100%;
+        }
         span{
           font-size: 14px;
           color: #818285;
@@ -498,7 +502,7 @@ button:focus {outline:0;}
     border-bottom: 1px solid #202225;
     margin-bottom: 15px;
     span {
-      font-weight: 600;
+      font-weight: 500;
       margin-left: 20px;
     }
     button{

@@ -22,6 +22,7 @@ class ServerColumn extends React.Component {
 
     if (this.props.match.path !== '/home') {
       this.props.fetchServerRooms(this.props.match.params.serverId);
+      this.props.fetchServerMembers(this.props.match.params.serverId);
     } else {
       this.props.fetchPMRooms();
     }
@@ -66,12 +67,12 @@ class ServerColumn extends React.Component {
   handleServerClick(e){
     if (this.props.match.params.serverId !== e.target.id) {
       this.props.fetchServerRooms(e.target.id);
+      this.props.fetchServerMembers(e.target.id);
     }
-    // e.preventDefault()
   }
 
   handlePMClick(e){
-    
+
     this.props.fetchPMRooms();
   }
 
@@ -80,7 +81,7 @@ class ServerColumn extends React.Component {
     const serverNodes = this.props.servers.map(server => {
 
       return (
-        <Link  to={`/server/${server.id}`} onClick={this.handleServerClick} id={server.id}>
+        <Link to={`/server/${server.id}`} onClick={this.handleServerClick} id={server.id}>
           <button className="server-node" id={server.id} >
               <img src={server.icon_url} id={server.id}/>
           </button>
@@ -103,7 +104,7 @@ class ServerColumn extends React.Component {
 
         <section id="outside-links">
           <div id="ol-row-1">
-            <a id="my-github" href="https://github.com/mvaleriani">
+            <a id="my-github" href="https://github.com/mvaleriani/Dialoq">
               <img src="https://image.flaticon.com/icons/svg/25/25231.svg"/>
             </a>
           </div>

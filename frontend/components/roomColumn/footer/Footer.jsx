@@ -14,7 +14,7 @@ class Footer extends React.Component {
     return (
       <footer className="account-footer">
         <div className="profile-icon">
-          <img src="https://img.etsystatic.com/il/b4076d/603588392/il_fullxfull.603588392_m8rm.jpg?version=0"/>
+          <img src={this.props.currentUser.image_url}/>
           <aside className="online-status"></aside>
         </div>
         <section className="user-info">

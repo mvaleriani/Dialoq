@@ -12,7 +12,7 @@ class Api::UsersController < ApplicationController
   end
 
   def index
-    @server = Server.find(params[:server_id])
+    @server = current_user.servers.find(params[:server_id]) 
     @server_members = @server.members
     render "api/users/index"
   end

@@ -1,7 +1,7 @@
 class Api::FriendshipsController < ApplicationController
   def create
     @friendship = Frienship.new(friendship_params)
-    @friendship.user_id =current_user.id
+    @friendship.user_id = current_user.id
 
     if @friendship.save
       @other_friendship = Frienship.new()

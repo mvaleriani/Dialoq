@@ -1,7 +1,7 @@
 import { connect } from 'react-redux';
 import React from 'react';
 import ServerColumn from './ServerColumn';
-import {fetchUserServers, createServer, removeServerMembership} from '../../actions/serverActions';
+import {fetchServerMembers, fetchUserServers, createServer, removeServerMembership} from '../../actions/serverActions';
 import {fetchServerRooms, fetchPMRooms} from '../../actions/roomActions';
 import {withRouter} from 'react-router';
 
@@ -13,6 +13,7 @@ const mapDispatchToProps = dispatch => ({
   fetchUserServers: () => dispatch(fetchUserServers()),
   fetchServerRooms: serverId => dispatch(fetchServerRooms(serverId)),
   fetchPMRooms: () => dispatch(fetchPMRooms()),
+  fetchServerMembers: serverId => dispatch(fetchServerMembers(serverId)),
   createServer: server => dispatch(createServer(server)),
   removeServerMembership: serverId => dispatch(removeServerMembership(serverId)),
 });

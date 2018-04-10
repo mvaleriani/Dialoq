@@ -4,6 +4,8 @@ export const RECEIVE_SERVER_ROOMS = 'RECEIVE_SERVER_ROOMS';
 export const RECEIVE_SERVER_ROOM = 'RECEIVE_SERVER_ROOM';
 export const RECEIVE_ROOM_ERRORS = 'RECEIVE_ROOM_ERRORS';
 
+
+
 const receiveServerRooms = rooms => ({
   type: RECEIVE_SERVER_ROOMS,
   rooms
@@ -18,6 +20,7 @@ export const receiveRoomErrors = errors => ({
   type: RECEIVE_ROOM_ERRORS,
   errors
 });
+
 
 export const createRoom = room => dispatch => (
   APIUtil.createRoom(room).then(room => {

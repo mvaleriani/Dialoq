@@ -2,77 +2,63 @@ import React from 'react';
 
 
 class MemberIndex extends React.Component {
+  constructor(props){
+    super(props)
+  }
 
   componentDidMount() {
 
   }
 
   render(){
+    let onlineMembers = '';
+    if (this.props.onlineMembers.length > 0) {
+      onlineMembers = this.props.onlineMembers.map(user => {
+        return (
+          <section className="member">
+            <div className="profile-icon">
+              <img src={user.image_url}/>
+              <aside className="online-status"></aside>
+            </div>
+            <div className="username">{user.username}</div>
+          </section>
+        );
+      });
+
+    }
+    let red = {backgroundColor: '#FE5F55'}
+    let offlineMembers = '';
+    if (this.props.offlineMembers.length > 0) {
+      offlineMembers = this.props.offlineMembers.map(user => {
+
+        return (
+          <section className="member">
+            <div className="profile-icon">
+              <img src={user.image_url}/>
+              <aside style={red} className="online-status"></aside>
+            </div>
+            <div className="username">{user.username}</div>
+          </section>
+        );
+      });
+    }
+
     return (
       <aside className="member-index">
 
         <section id="online-members">
-          <span className="user-category">ONLINE - #</span>
+          <span>ONLINE - {onlineMembers.length}</span>
           <div className="spacer"></div>
-
-          <section className="member">
-            <div className="profile-icon">
-              <img src="https://img.etsystatic.com/il/b4076d/603588392/il_fullxfull.603588392_m8rm.jpg?version=0"/>
-              <aside className="online-status"></aside>
-            </div>
-            <div className="username">Username_0</div>
-          </section>
-
-          <section className="member">
-            <div className="profile-icon">
-              <img src="https://img.etsystatic.com/il/b4076d/603588392/il_fullxfull.603588392_m8rm.jpg?version=0"/>
-              <aside className="online-status"></aside>
-            </div>
-            <div className="username">Username_1</div>
-          </section>
-
-          <section className="member">
-            <div className="profile-icon">
-              <img src="https://img.etsystatic.com/il/b4076d/603588392/il_fullxfull.603588392_m8rm.jpg?version=0"/>
-              <aside className="online-status"></aside>
-            </div>
-            <div className="username">Username_2</div>
-          </section>
-
-          <section className="member">
-            <div className="profile-icon">
-              <img src="https://img.etsystatic.com/il/b4076d/603588392/il_fullxfull.603588392_m8rm.jpg?version=0"/>
-              <aside className="online-status"></aside>
-            </div>
-            <div className="username">Username_3</div>
-          </section>
-
-          <section className="member">
-            <div className="profile-icon">
-              <img src="https://img.etsystatic.com/il/b4076d/603588392/il_fullxfull.603588392_m8rm.jpg?version=0"/>
-              <aside className="online-status"></aside>
-            </div>
-            <div className="username">Username_4</div>
-          </section>
-
-          <section className="member">
-            <div className="profile-icon">
-              <img src="https://img.etsystatic.com/il/b4076d/603588392/il_fullxfull.603588392_m8rm.jpg?version=0"/>
-              <aside className="online-status"></aside>
-            </div>
-            <div className="username">Username_5</div>
-          </section>
-
-          <section className="member">
-            <div className="profile-icon">
-              <img src="https://img.etsystatic.com/il/b4076d/603588392/il_fullxfull.603588392_m8rm.jpg?version=0"/>
-              <aside className="online-status"></aside>
-            </div>
-            <div className="username">Username_6</div>
-          </section>
+          {onlineMembers}
 
         </section>
 
+        <section id="online-members">
+          <span>OFFLINE - {offlineMembers.length}</span>
+          <div className="spacer"></div>
+          {offlineMembers}
+
+        </section>
       </aside>
     )
   }

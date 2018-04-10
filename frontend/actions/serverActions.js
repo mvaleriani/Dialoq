@@ -3,6 +3,7 @@ import * as APIUtil from '../util/serverAPIUtil';
 export const RECEIVE_USER_SERVERS = 'RECEIVE_USER_SERVERS';
 export const RECEIVE_SINGLE_SERVER = 'RECEIVE_SINGLE_SERVER';
 export const RECEIVE_SERVER_ERRORS = 'RECEIVE_SERVER_ERRORS';
+export const RECEIVE_SERVER_MEMBERS = 'RECEIVE_SERVER_MEMBERS';
 // export const CREATE_SERVER = 'CREATE_SERVER';
 export const LEAVE_SERVER = 'LEAVE_SERVER';
 
@@ -16,9 +17,14 @@ const receiveSingleServer = server => ({
   server
 });
 
-export const receiveServerErrors = errors => ({
+const receiveServerErrors = errors => ({
   type: RECEIVE_SERVER_ERRORS,
   errors
+});
+
+const receiveServerMembers = users => ({
+  type: RECEIVE_SERVER_MEMBERS,
+  users
 });
 
 const leaveServer = serverId => ({
@@ -39,4 +45,8 @@ export const removeServerMembership = serverId => dispatch => (
 
 export const fetchUserServers = () => dispatch => (
   APIUtil.fetchUserServers().then(servers => dispatch(receiveUserServers(servers)))
+);
+
+export const fetchServerMembers = serverId => dispatch => (
+  APIUtil.fetchServerMembers(serverId).then(users => dispatch(receiveServerMembers(users)))
 );

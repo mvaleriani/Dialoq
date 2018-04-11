@@ -22,16 +22,20 @@ class MessageIndex extends React.Component {
         if (message !== undefined && this.props.serverMembers[userId]!== undefined){
           messages.push(
           <section className="message">
-            <div className="icon">
-              <img src={this.props.serverMembers[userId].image_url}/>
-            </div>
-
-            <div className="content">
-              <div className="header">
-                <span className={this.props.serverMembers[message.user_id].username}></span>
-
+      
+              <div className="icon">
+                <img src={this.props.serverMembers[userId].image_url}/>
               </div>
-            </div>
+
+              <div className="content">
+                <div className="header">
+                  <span className="message-usename">{this.props.serverMembers[message.user_id].username}</span>
+
+                </div>
+                <p>{message.body}</p>
+              </div>
+
+
           </section>
         );}
       });

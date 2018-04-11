@@ -22,11 +22,13 @@ class Index extends React.Component {
   }
 
   handleRoomClick(e){
-    // this.props.fetchRoomMessages(this.props.match.params.roomId)
+
   }
 
   render(){
+
     const rooms = this.props.rooms.map(room => {
+
       return(
         <Link onClick={this.handleRoomClick} className="room-link" to={`/server/${room.server_id}/room/${room.id}`}>
           <span># </span>{room.name}

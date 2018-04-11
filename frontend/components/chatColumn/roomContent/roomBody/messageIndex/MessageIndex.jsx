@@ -22,7 +22,7 @@ class MessageIndex extends React.Component {
         if (message !== undefined && this.props.serverMembers[userId]!== undefined){
           messages.push(
           <section className="message">
-      
+
               <div className="icon">
                 <img src={this.props.serverMembers[userId].image_url}/>
               </div>
@@ -33,6 +33,7 @@ class MessageIndex extends React.Component {
 
                 </div>
                 <p>{message.body}</p>
+                
               </div>
 
 

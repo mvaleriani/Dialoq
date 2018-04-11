@@ -326,6 +326,7 @@ button:focus {outline:0;}
         height: 100%;
         display: flex;
         flex-direction: column;
+        align-items: center;
         padding-left: 25px;
         padding-right: 25px;
         overflow: scroll;
@@ -338,12 +339,17 @@ button:focus {outline:0;}
         }
         .message {
           width: 92%;
-          height: 10%;
+          height: fit-content;
           border-bottom: 1px solid #484B52;
           display: flex;
-          min-height: 100px;
+          justify-content: flex-start;
+
+          min-height: fit-content;
           margin-left: 25px;
           margin-right: 25px;
+          // margin-top: 20px;
+          // padding-bottom: 45px;
+          // overflow:scroll;
           .icon{
             height: 40px;
             width: 40px;
@@ -361,13 +367,16 @@ button:focus {outline:0;}
           .content{
             margin-left: 20px;
             margin-top: 19px;
-            display: flex;
+            height: fit-content;
+            // margin-bottom: 15px;
+            display: block;
             flex-direction: column;
             font-size: 15px;
             font-weight: 550;
             p{
+              display: block;
               font-size: 15px;
-              margin-bottom: 90px;
+              margin-bottom: 20px;
               color: #C3C4C5;
               font-weight: 500;
             }

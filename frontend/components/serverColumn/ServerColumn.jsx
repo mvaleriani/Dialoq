@@ -77,8 +77,13 @@ class ServerColumn extends React.Component {
   }
 
   render() {
-    // let selectedServer = {borderRadius: '15px', backgroundColor: '#37a1a78a'};
+    let selectedServer = {borderRadius: '15px', backgroundColor: '#37a1a78a'};
+
     const serverNodes = this.props.servers.map(server => {
+      let selected = "selected-server";
+      if (this.props.match.params.serverId !== server.id) {
+        selected = ''
+      }
 
       return (
         <Link to={`/server/${server.id}`} onClick={this.handleServerClick} id={server.id}>
@@ -104,9 +109,7 @@ class ServerColumn extends React.Component {
 
         <section id="outside-links">
           <div id="ol-row-1">
-            <a id="my-github" href="https://github.com/mvaleriani/Dialoq">
-              <img src="https://image.flaticon.com/icons/svg/25/25231.svg"/>
-            </a>
+
           </div>
 
           <div>

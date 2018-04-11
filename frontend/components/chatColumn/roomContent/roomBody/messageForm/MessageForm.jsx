@@ -13,12 +13,12 @@ class MessageForm extends React.Component {
 
   }
 
-  componentWillMount() {
+  componentDidMount() {
     this.createSocket();
   }
 
-  componentWillReceiveProps(newProps){
-    if (newProps.match.params.roomId !== undefined) {
+  componentDidUpdate(prevProps){
+    if (prevProps.match.params.roomId !== undefined && prevProps.match.params.roomId !== this.props.match.params.roomId) {
       this.createSocket();
     }
   }
@@ -51,9 +51,7 @@ class MessageForm extends React.Component {
       server_room: channelKey
     }, {
       connected: () => {},
-      received: (data) => {
-        console.log(data);
-      },
+      
       create: function(currentUserId, messageBody, currentRoomId){
         this.perform('create', { userId: currentUserId,
           body: messageBody,

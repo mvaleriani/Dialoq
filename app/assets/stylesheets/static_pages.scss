@@ -328,14 +328,20 @@ button:focus {outline:0;}
         flex-direction: column;
         padding-left: 25px;
         padding-right: 25px;
+        overflow: scroll;
+        
         .message {
           width: 100%;
           height: auto;
-          border-top: 1px solid black;
+          border-bottom: 1px solid #484B52;
           .icon{
             height: 40px;
             width: 40px;
             overflow: hidden;
+            border-radius: 50%;
+            margin-left: 25px;
+            margin-top: 20px;
+            margin-bottom: 20px;
             img{
               height: 40px;
               width: 40px;

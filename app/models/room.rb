@@ -20,4 +20,7 @@ class Room < ApplicationRecord
     class_name: :Chategory,
     optional: true
 
+  has_many :messages,
+    foreign_key: :room_id,
+    class_name: :Message
 end

@@ -19,3 +19,10 @@ export const fetchPMRooms = () => (
     url: `api/dm_rooms`
   })
 );
+
+export const fetchRoomMessages = roomId => (
+  $.ajax({
+    method: 'GET',
+    url: `/api/rooms/${roomId}/messages`
+  })
+);

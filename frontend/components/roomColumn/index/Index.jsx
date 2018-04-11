@@ -6,27 +6,29 @@ import {presets} from 'react-motion';
 class Index extends React.Component {
 
   constructor(props){
-    super(props)
-
+    super(props);
+    this.handleRoomClick = this.handleRoomClick.bind(this);
   }
 
   componentDidMount() {
 
   }
   componentWillReceiveProps(nextProps){
-    
-    console.log(nextProps);
+
   }
 
   handleChategoryClick(e){
     e.preventDefault();
+  }
 
+  handleRoomClick(e){
+    // this.props.fetchRoomMessages(this.props.match.params.roomId)
   }
 
   render(){
     const rooms = this.props.rooms.map(room => {
       return(
-        <Link className="room-link" to={`/server/${room.server_id}/room/${room.id}`}>
+        <Link onClick={this.handleRoomClick} className="room-link" to={`/server/${room.server_id}/room/${room.id}`}>
           <span># </span>{room.name}
         </Link>
       );

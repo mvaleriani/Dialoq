@@ -92,7 +92,7 @@ class User < ApplicationRecord
 
   def ensure_image_url
     unless self.image_url
-      self.image_url = 'defaultDoggo.png'
+      self.image_url = 'https://www.iconexperience.com/_img/o_collection_png/green_dark_grey/512x512/plain/user.png'
       save!
     end
   end

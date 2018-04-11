@@ -1,4 +1,5 @@
 import { connect } from 'react-redux';
+import { withRouter } from 'react-router-dom';
 import React from 'react';
 import RoomBody from './RoomBody';
 
@@ -10,7 +11,7 @@ const mapDispatchToProps = dispatch => ({
 
 });
 
-export default connect(
+export default withRouter(connect(
   mapStateToProps,
   mapDispatchToProps
-)(RoomBody);
+)(RoomBody));

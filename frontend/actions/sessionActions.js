@@ -30,3 +30,7 @@ export const logout = () => dispatch => (
   APIUtil.logout()
     .then(user => (dispatch(receiveCurrentUser(null))))
 );
+
+export const updateUserDetails = user => dispatch => (
+  APIUtil.updateUserDetails(user).then(user => (dispatch(receiveCurrentUser(user))))
+);

@@ -12,14 +12,33 @@ class Api::UsersController < ApplicationController
   end
 
   def index
-    @server = current_user.servers.find(params[:server_id]) 
+    @server = current_user.servers.find(params[:server_id])
     @server_members = @server.members
     render "api/users/index"
+  end
+
+  def update
+    @user = User.find(params[:user][:id])
+
+    if @user.id == current_user.id
+      if params[:user][:image_url]
+        @user.update_attribute(image_url: params[:user][:image_url])
+      end
+      if params[:user][:online_status]
+        p 'lllloooooooooollllll\n\n'
+        @user.online_status = params[:user][:online_status]
+        @user.save
+      end
+
+      render "api/users/show"
+    else
+      render json: ["You can't patch another user"], status: 422
+    end
   end
 
   private
 
   def user_params
-    params.require(:user).permit(:server_id, :username, :password, :email, :image_url)
+    params.require(:user).permit(:id, :server_id, :username, :password, :image_url, :online_status)
   end
 end

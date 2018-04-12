@@ -8,7 +8,7 @@ Rails.application.routes.draw do
 
     resources :server_memberships, only: [:create, :destroy, :index]
 
-    resources :users, only: [:create]
+    resources :users, only: [:create, :update]
 
     resources :dm_rooms, only: [:create, :destroy, :index]
 

@@ -268,10 +268,19 @@ button:focus {outline:0;}
       position: relative;
       img{
         position: absolute;
-        height: 28px;
-        width: 28px;
+        height: 27px;
+        width: 27px;
         top: 2px;
         left: 2px;
+      }
+    }
+    #gmail{
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      img{
+        height: 26px;
+
       }
     }
     .header-title {
@@ -648,6 +657,7 @@ button:focus {outline:0;}
       #account-settings-collapse-container{
         display: flex;
         flex-direction: column;
+        align-items: center;
         position: absolute;
         text-shadow: 3px 3px black;
         width: 210px;
@@ -658,6 +668,65 @@ button:focus {outline:0;}
         border-radius: 10px;
         transition-property: top;
         transition-duration: .3s;
+        #status-setting-div{
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          height: 24px;
+          margin-top: 10px;
+          margin-bottom: 25px;
+          border-radius: 7px;
+
+          color: white;
+          font-size: 15px;
+          font-weight: 500;
+          text-shadow: none;
+          span{
+            width: fit-content;
+            text-shadow: 1px 1px #b8b9ba;
+            padding-left: 5px;
+            padding-right: 5px;
+            height: 22px;
+            border-radius: 10px;
+          }
+          #online-status-setting{
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            overflow: hidden;
+            margin-left: 20px;
+            width: 50px;
+            height: 22px;
+            background-color: #7E8185;
+            border-radius: 8px;
+            #status-anim{
+              height: 0px;
+              width: 0px;
+            }
+          }
+        }
+        #logout-button{
+          height: 24px;
+          width: 150px;
+          color: #202225;
+          margin-top: 10px;
+          border-radius: 7px;
+          text-shadow: none;
+          margin-bottom: 10px;
+          background-color: white;
+          border: 2px solid transparent;
+          transition-property: background-color, color, border;
+          transition-duration: .2s;
+          span{
+            font-size: 20px;
+            font-weight: 600;
+          }
+        }
+        #logout-button:hover{
+          background-color: #202225;
+          color: white;
+          border: 2px solid white;
+        }
       }
     }
     .profile-icon {

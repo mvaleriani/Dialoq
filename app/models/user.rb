@@ -63,12 +63,12 @@ class User < ApplicationRecord
 
   def update_online_status(status)
     self.online_status = status
-    save!
+    save
   end
 
   def reset_session_token!
     generate_unique_session_token
-    save!
+    save
     self.session_token
   end
 

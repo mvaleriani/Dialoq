@@ -1,7 +1,7 @@
 export const createRoom = room => (
   $.ajax({
     method: 'POST',
-    url: `/api/servers/${serverId}/rooms`,
+    url: `/api/servers/${room.server_id}/rooms`,
     data: {room}
   })
 );

@@ -572,6 +572,7 @@ button:focus {outline:0;}
     display: flex;
     align-items: center;
     justify-content: space-between;
+    position: relative;
     height: 48px;
     min-height: 48px;
     width: 100%;
@@ -592,8 +593,54 @@ button:focus {outline:0;}
     }
     button:hover{
       cursor: pointer;
+      background-color: #37a1a78a;
     }
     button:focus {outline:0;}
+    form{
+      position: absolute;
+      top: -150px;
+      left: 19px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      width: 200px;
+
+      background-color: #376D73;
+      border-radius: 7px;
+      transition-property: top;
+      transition-duration: .3s;
+      h3{
+        color: #E8E8E8;
+        font-size: 15px;
+      }
+      .create-room-form{
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        input{
+          height: 20px;
+          border-radius: 7px;
+          padding-left: 7px;
+          padding-right: 7px;
+          border: 1px solid transparent;
+          background-color: #E8E8E8;
+          margin-bottom: 10px;
+        }
+        input:focus{
+          outline:0;
+        }
+
+        button{
+          width: fit-content;
+          border-radius: 5px;
+          margin-bottom: 13px;
+          height: 20px;
+          background-color: #E8E8E8;
+          color: #202225;
+          font-weight: 500;
+        }
+      }
+    }
   }
 
   .room-index {

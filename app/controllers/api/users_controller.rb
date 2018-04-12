@@ -23,14 +23,12 @@ class Api::UsersController < ApplicationController
     if @user.id == current_user.id
       if params[:user][:image_url]
         @user.image_url = params[:user][:image_url]
-        @user.save
       end
       if params[:user][:online_status]
-        p 'lllloooooooooollllll\n\n'
         @user.online_status = params[:user][:online_status]
-        @user.save
       end
-
+      @user.save
+      @current_user = @user
       render "api/users/show"
     else
       render json: ["You can't patch another user"], status: 422

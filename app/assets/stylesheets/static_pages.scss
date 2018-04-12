@@ -643,7 +643,23 @@ button:focus {outline:0;}
     height: 52px;
     min-height: 52px;
     position: relative;
-
+    #account-settings{
+      position: relative;
+      #account-settings-collapse-container{
+        display: flex;
+        flex-direction: column;
+        position: absolute;
+        text-shadow: 3px 3px black;
+        width: 210px;
+        height: 1000px;
+        top: -15px;
+        left: -186px;
+        background-color: #5a5c5e;
+        border-radius: 10px;
+        transition-property: top;
+        transition-duration: .3s;
+      }
+    }
     .profile-icon {
       display: flex;
       height: 30px;
@@ -689,13 +705,13 @@ button:focus {outline:0;}
       height: 32px;
       width: 32px;
       border-radius: 4px;
-      background-color: #484B51;
-      border-color: #484B51;
-      overflow: hidden;
+      background-color: transparent;
+      border-color: transparent;
+      // overflow: hidden;
     }
     button:hover{
-      background-color: #7E8185;
-      border-color: #7E8185;
+      background-color: #484B51;
+      border-color: #484B51;
     }
     .settings{
       margin-right: 10px;
@@ -717,7 +733,7 @@ button:focus {outline:0;}
   }
   button:focus {outline:0;}
 
-  .selected-server{
+  #selected-server{
     background-color: #37a1a78a;
     border-radius: 15px;
     height: 50px;

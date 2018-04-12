@@ -21,7 +21,7 @@ class MessageIndex extends React.Component {
   }
 
   componentDidUpdate(prevProps){
-    if (prevProps.match.params.roomId !== undefined && prevProps.match.params.roomId !== this.props.match.params.roomId) {
+    if (prevProps.match.params.roomId !== this.props.match.params.roomId) {
       this.createSocket();
     }
     let index = document.getElementById('message-index');

@@ -22,7 +22,8 @@ class Api::UsersController < ApplicationController
 
     if @user.id == current_user.id
       if params[:user][:image_url]
-        @user.update_attribute(image_url: params[:user][:image_url])
+        @user.image_url = params[:user][:image_url]
+        @user.save
       end
       if params[:user][:online_status]
         p 'lllloooooooooollllll\n\n'

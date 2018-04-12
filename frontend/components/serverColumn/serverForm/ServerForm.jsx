@@ -1,12 +1,12 @@
 import React from 'react';
 import { withRouter } from 'react-router-dom';
 
-class ServerForm {
+class ServerForm extends React.Component{
   constructor(props) {
     super(props);
     this.state = {
       name: '',
-      admin_id: this.props.current_user.id,
+      admin_id: this.props.currentUser.id,
       icon_url: '',
       dm_status: false,
     }
@@ -22,7 +22,9 @@ class ServerForm {
   handleSubmit(e) {
     e.preventDefault();
     const server = Object.assign({}, this.state);
+
     this.props.processForm(server);
+    this.setState({name: '', icon_url: ''})
   }
 
   renderErrors(){
@@ -40,30 +42,33 @@ class ServerForm {
   render(){
     return(
       <div className="create-server">
-        <form onSubmit{this.handleSubmit} className="create-server-form-box">
+        <form onSubmit={this.handleSubmit} className="create-server-form-box">
           <h3>Start your own server!</h3>
           <div className="create-server-form">
             <label>
-              Name:
+
               <input type="text"
                 value={this.state.name}
                 onChange={this.update('name')}
                 className="create-server-input"
+                placeholder="Server Name"
               />
             </label>
 
             <label>
-              Icon Url:
+
               <input type="text"
                 value={this.state.icon_url}
                 onChange={this.update('icon_url')}
                 className="create-server-input"
+                placeholder="Icon url"
               />
             </label>
-            <button className="server-submit">Create</button>
+            <button className="server-submit">Create Server</button>
           </div>
         </form>
       </div>
     );
   }
 }
+export default ServerForm;

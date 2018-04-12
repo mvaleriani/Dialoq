@@ -664,10 +664,25 @@ button:focus {outline:0;}
         height: 1000px;
         top: -15px;
         left: -186px;
-        background-color: #5a5c5e;
+        background-color: #37a1a78a;
         border-radius: 10px;
         transition-property: top;
         transition-duration: .3s;
+
+        #image-url-input{
+          padding-left: 7px;
+          padding-right: 7px;
+          background-color: #e8e8e8;
+          margin-top: 15px;
+          margin-bottom: 12px;
+          border-radius: 5px;
+          height: 20px;
+          border-color: transparent;
+        }
+        input:focus{
+          outline:0;
+        }
+
         #status-setting-div{
           display: flex;
           justify-content: center;
@@ -697,7 +712,7 @@ button:focus {outline:0;}
             margin-left: 20px;
             width: 50px;
             height: 22px;
-            background-color: #7E8185;
+            background-color: #e8e8e8;
             border-radius: 8px;
             #status-anim{
               height: 0px;
@@ -713,18 +728,18 @@ button:focus {outline:0;}
           border-radius: 7px;
           text-shadow: none;
           margin-bottom: 10px;
-          background-color: white;
+          background-color: #e8e8e8;
           border: 2px solid transparent;
           transition-property: background-color, color, border;
           transition-duration: .2s;
           span{
             font-size: 20px;
-            font-weight: 600;
+            font-weight: 500;
           }
         }
         #logout-button:hover{
-          background-color: #202225;
-          color: white;
+          background-color: #2F3136;
+          color: #e8e8e8;
           border: 2px solid white;
         }
       }
@@ -792,7 +807,9 @@ button:focus {outline:0;}
   display: flex;
   flex-direction: column;
   align-items: center;
-  overflow: scroll;
+  position: relative;
+  // overflow: scroll;
+  overflow-x:visible;
   width: 70px;
   min-width: 70px;
   height: 100vh;
@@ -801,7 +818,60 @@ button:focus {outline:0;}
     border-color: transparent;
   }
   button:focus {outline:0;}
+  #server-form-collapse{
+    position: absolute;
+    left: -80px;
+    bottom: 70px;
+    background-color: #37a1a78a;
+    border-radius: 7px;
 
+    width: 200px;
+    transition-property: left;
+    transition-duration: .18s;
+    .create-server{
+      display: flex;
+      justify-content: center;
+      height: 167px;
+      width: 200px;
+      h3{
+        font-size: 15px;
+      }
+      .create-server-form{
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        input{
+          padding-left: 7px;
+          padding-right: 7px;
+          border-radius: 7px;
+          height: 20px;
+          margin: 5px;
+          border-color: transparent;
+          background-color: #e8e8e8;
+        }
+
+        input:focus{
+          outline:0;
+        }
+        button{
+          margin-top: 10px;
+          color: #2F3136;
+          background-color: #e8e8e8;
+          border-color: transparent;
+          border-radius: 5px;
+          font-weight: 500;
+          // margin-bottom: 10px;
+          transition-property: color, background-color, border-color;
+          transition-duration: .2s;
+        }
+        button:hover{
+          background-color: #2F3136;
+          color: #e8e8e8;
+          border: 2px solid #e8e8e8;
+        }
+      }
+    }
+  }
   #selected-server{
     background-color: #37a1a78a;
     border-radius: 15px;
@@ -819,7 +889,7 @@ button:focus {outline:0;}
     min-height: 50px;
     width: 50px;
     cursor: pointer;
-    overflow: hidden;
+    // overflow: hidden;
     margin-top: 10px;
     transition-property: background-color, border-color;
     transition-duration: .3s;

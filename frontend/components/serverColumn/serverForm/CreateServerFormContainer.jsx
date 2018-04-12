@@ -2,9 +2,11 @@ import { connect } from 'react-redux';
 import React from 'react';
 import ServerForm from './ServerForm';
 import {createServer} from '../../../actions/serverActions';
+import {withRouter} from 'react-router';
 
-const mapStateToProps = ({ errors }) => {
-  errors: errors.servers
+const mapStateToProps = (state, ownProps) => {
+
+  return {currentUser: state.session.currentUser};
 };
 
 const mapDispatchToProps = dispatch => {
@@ -14,4 +16,4 @@ const mapDispatchToProps = dispatch => {
 
 };
 
-export default connect(mapStateToProps, mapDispatchToProps)(ServerForm);
+export default withRouter(connect(mapStateToProps, mapDispatchToProps)(ServerForm));

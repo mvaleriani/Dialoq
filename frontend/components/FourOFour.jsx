@@ -40,7 +40,7 @@ class FourOFour extends React.Component {
         <span>
           <img src="https://emojipedia-us.s3.amazonaws.com/thumbs/120/samsung/128/water-wave_1f30a.png" draggable="false"/>
             Select Mr. Whale to go Home
-          <img src="https://emojipedia-us.s3.amazonaws.com/thumbs/120/samsung/128/water-wave_1f30a.png" draggable="false"/> 
+          <img src="https://emojipedia-us.s3.amazonaws.com/thumbs/120/samsung/128/water-wave_1f30a.png" draggable="false"/>
         </span>
       </section>
     );

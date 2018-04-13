@@ -99,6 +99,7 @@ button:focus {outline:0;}
   background-color: #3c877c;
   border-color: #3c877c;
 
+  max-height: 55px;
   margin-left: 30px;
 
   color: #3CA6B0;
@@ -112,16 +113,49 @@ button:focus {outline:0;}
   display: flex;
   align-items: center;
   justify-content: center;
-
+  background-color: #e8e8e8;
+  position: relative;
   height: 100vh;
   width: 100vw;
-  background-image: url(https://www.socialpeeks.com/hs-fs/hubfs/fb87712f68f6f09095779d07658f9f03.jpg?t=1522332148336&width=2560&name=fb87712f68f6f09095779d07658f9f03.jpg);
   background-position: center;
   background-size: cover;
-
+  #banner{
+    position: absolute;
+    width: 600px;
+    top: 40px;
+    right:40px;
+  }
+  #whale-splash{
+    position: absolute;
+    width: 600px;
+    left: 60px;
+    bottom: 55px;
+    transform: rotate(-10deg);
+  }
+  #water-splash-1{
+    position: absolute;
+    width: 50vw;
+    bottom: -70px;
+    left: 0px;
+  }
+  #water-splash-2{
+    position: absolute;
+    width: 50vw;
+    bottom: -70px;
+    right: 0px;
+    transform: scaleX(-1);
+  }
   a { margin: 15px; }
-
-
+  Collapse{
+    z-index: 1000;
+  }
+  #forms{
+    display: flex;
+    align-items: center;
+    z-index: 1000;
+    position: absolute;
+    right: 110px;
+  }
   .login-form{
     margin-top: 10px;
     display: flex;
@@ -160,6 +194,7 @@ button:focus {outline:0;}
     font-family: sans-serif;
     color: #FFA24F;
     font-weight: 700;
+
     .session-submit{
       margin: 7px;
       font-size: 12px;

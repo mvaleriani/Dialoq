@@ -1,7 +1,9 @@
 class Api::ServerMembershipsController < ApplicationController
   def create
-    @membership = ServerMembership.new(membership_params)
-    @membership.user_id = @current_user.id
+    p params
+    @membership = ServerMembership.new()
+    @membership.server_id = params[:server_membership][:server_id]
+    @membership.user_id = current_user.id
 
     if @membership.save
       @server = Server.find(@membership.server_id)

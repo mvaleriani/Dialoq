@@ -6,6 +6,7 @@ import rooms from './roomsReducer';
 import serverMembers from './usersReducer';
 import messages from './messagesReducer'
 import ui from './uiReducer'
+import searchResults from './searchReducer'
 
 const rootReducer = combineReducers({
   session,
@@ -15,6 +16,7 @@ const rootReducer = combineReducers({
   serverMembers,
   messages,
   ui,
+  searchResults,
 });
 
 export default rootReducer;

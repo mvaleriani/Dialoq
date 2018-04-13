@@ -26,3 +26,12 @@ export const fetchServerMembers = serverId => (
     url: `/api/servers/${serverId}/users`
   })
 );
+
+export const joinServer = server => {
+  let server_membership = {server_id: server.server_id}
+  return $.ajax({
+    method: 'POST',
+    url: '/api/server_memberships',
+    data: {server_membership},
+  })
+};

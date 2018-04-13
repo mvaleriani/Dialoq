@@ -2,7 +2,7 @@ class Api::ServersController < ApplicationController
   def create
     @server = Server.new(server_params)
     @server.admin_id = current_user.id
-    
+
     if @server.save!
       #create ServerMembership with current_user.id and @server.id
       @membership = ServerMembership.new()

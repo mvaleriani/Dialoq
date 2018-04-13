@@ -32,6 +32,11 @@ const leaveServer = serverId => ({
   serverId
 });
 
+export const joinServer = server => dispatch => (
+  APIUtil.joinServer(server)
+    .then(server => dispatch(receiveSingleServer(server)))
+);
+
 export const createServer = server => dispatch => (
   APIUtil.createServer(server).then(server => {
     dispatch(receiveSingleServer(server));

@@ -51,7 +51,7 @@ class MessageForm extends React.Component {
       server_room: channelKey
     }, {
       connected: () => {},
-      
+
       create: function(currentUserId, messageBody, currentRoomId){
         this.perform('create', { userId: currentUserId,
           body: messageBody,

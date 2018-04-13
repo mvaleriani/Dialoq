@@ -54,5 +54,6 @@ Users also have access to an animated menu where they can change their online st
 
 ![Account Menu](https://raw.githubusercontent.com/mvaleriani/Dialoq/master/app/assets/menu.gif)
 
-React Collapse was also used for the search animation:
+React Collapse was also used for the search animation
+
 ![Search](https://raw.githubusercontent.com/mvaleriani/Dialoq/master/app/assets/search.gif)

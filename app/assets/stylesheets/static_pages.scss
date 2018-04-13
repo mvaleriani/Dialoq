@@ -12,7 +12,7 @@ body{
   justify-content: center;
   font-family: sans-serif;
   background-color: #2f3136;
-
+  overflow: scroll;
   width: 100vw;
   height: 100vh;
   .error-page{
@@ -115,7 +115,7 @@ button:focus {outline:0;}
   background-color: #e8e8e8;
   position: relative;
   min-width: 1349px;
-  max-width: 1350px;
+  max-width: 1349px;
   min-height: 747px;
   height: 100vh;
   width: 100vw;
@@ -137,7 +137,7 @@ button:focus {outline:0;}
   }
   #water-splash-1{
     position: absolute;
-    width: 675px;
+    width: 674px;
     bottom: -70px;
     left: 0px;
   }

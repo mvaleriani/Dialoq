@@ -95,8 +95,7 @@ class Splash extends React.Component {
           this.setState({loginButtonStyle: {
             width: '250px',
             height: '30vh',
-            backgroundColor: '#E4406E',
-            borderColor: '#E4406E',
+            
             minHeight: '280px',
             labelMargin: {margin: '7px'}}
           })
@@ -119,8 +118,7 @@ class Splash extends React.Component {
           this.setState({signupButtonStyle: {
             width: '250px',
             height: '30vh',
-            backgroundColor: '#E4406E',
-            borderColor: '#E4406E',
+
             minHeight: '280px',
             labelMargin: {margin: '7px'}}
           })

@@ -83,7 +83,7 @@ button:focus {outline:0;}
   border-color: #FFA24F;
   background-color: none;
   font-family: sans-serif;
-  color: #0C0329;
+  color: #FFA24F;
   padding: 10px;
   span{
     font-size: 10px;
@@ -96,17 +96,16 @@ button:focus {outline:0;}
 
 #demo-button{
   border-radius: 5px;
-  background-color: #3c877c;
-  border-color: #3c877c;
+  background-color: #1E3C4F;
+
 
   max-height: 55px;
   margin-left: 30px;
-
-  color: #3CA6B0;
+  border: 1px solid transparent;
+  color: #00B5DA;
   font-size: 30px;
   font-weight: 600;
 
-  text-shadow: 1px 1px #3c6984;
 }
 
 .splash{
@@ -115,8 +114,12 @@ button:focus {outline:0;}
   justify-content: center;
   background-color: #e8e8e8;
   position: relative;
+  min-width: 1349px;
+  max-width: 1350px;
+  min-height: 747px;
   height: 100vh;
   width: 100vw;
+  overflow: scroll;
   background-position: center;
   background-size: cover;
   #banner{
@@ -134,13 +137,13 @@ button:focus {outline:0;}
   }
   #water-splash-1{
     position: absolute;
-    width: 50vw;
+    width: 675px;
     bottom: -70px;
     left: 0px;
   }
   #water-splash-2{
     position: absolute;
-    width: 50vw;
+    width: 675px;
     bottom: -70px;
     right: 0px;
     transform: scaleX(-1);
@@ -168,9 +171,11 @@ button:focus {outline:0;}
 
   }
   #login-label{
-    text-shadow: 1px 1px #f16d0675;
+    text-shadow: 1px 1px black;
   }
-
+  #login-label:hover{
+    cursor: pointer;
+  }
   .signup-form{
     display: flex;
     flex-direction: column;
@@ -183,7 +188,10 @@ button:focus {outline:0;}
 
   }
   #signup-label{
-    text-shadow: 1px 1px #46466d4d;
+    text-shadow: 1px 1px black;
+  }
+  #signup-label:hover{
+    cursor: pointer;
   }
   button:focus {outline:0;}
 
@@ -192,7 +200,7 @@ button:focus {outline:0;}
     overflow: hidden;
     font-size: 30px;
     font-family: sans-serif;
-    color: #FFA24F;
+    color: #00B5DA;
     font-weight: 700;
 
     .session-submit{
@@ -202,29 +210,32 @@ button:focus {outline:0;}
     .session-submit:hover{
       background-color: #f7a66c;
     }
-    border-color: #0C0329;
+    border-color: transparent;
     height: 55px;
     // min-height: 235px;
     max-height: 280px;
     width: 140px;
     border-radius: 5px;
-    background-color: #0C0329;
+    background-color: #1E3C4F;
     h3{
       font-size: 20px;
-      text-shadow: 1px 1px #f16d0675;
+      text-shadow: 1px 1px black;
       margin: 0px;
+    }
+    h3:hover{
+      cursor:pointer
     }
     input{
       border-style: none;
       border-radius: 5px;
-      background-color: #ffbccd;
+
       padding: 5px;
       margin-bottom: 5px;
     }
   }
   .splash-login-button:hover{
-    background-color: #E4406E;
-    border-color: #E4406E;
+
+    // color: #1E3C4F;
     cursor: pointer;
   }
 
@@ -233,7 +244,7 @@ button:focus {outline:0;}
 
     font-size: 30px;
     font-family: sans-serif;
-    color: #0C0329;
+    color: #00B5DA;
     font-weight: 700;
     overflow: hidden;
     .session-submit{
@@ -241,31 +252,33 @@ button:focus {outline:0;}
       font-size: 12px;
     }
     .session-submit:hover{
-      background-color: #4c4577;
+      background-color: #f7a66c;
     }
-    border-color: #FFA24F;
+    border-color: transparent;
     height: 55px;
     // min-height: 235px;
     max-height: 280px;
     width: 150px;
     border-radius: 5px;
-    background-color: #FFA24F;
+    background-color: #1E3C4F;
     h3{
       font-size: 20px;
-      text-shadow: 1px 1px #46466d4d;
+      text-shadow: 1px 1px black;
       margin: 0px;
+    }
+    h3:hover{
+      cursor:pointer
     }
     input{
       border-style: none;
       border-radius: 5px;
-      background-color: #ffbccd;
+
       padding: 5px;
       margin-bottom: 5px;
     }
   }
   .splash-signup-button:hover{
-    background-color: #E4406E;
-    border-color: #E4406E;
+    // color: #1E3C4F;
     cursor: pointer;
   }
 }

@@ -48,3 +48,8 @@ The websocket for this project was implemented through Rails Action Cable. Chann
       }
 
 ![Live Chat](https://raw.githubusercontent.com/mvaleriani/Dialoq/master/app/assets/chat.gif)
+
+### Account Settings
+Users also have access to an animated menu where they can change their online status and profile icon. Pop-up animation was done with CSS transitions and React Collapse. Rails updates settings on the backend before sending them back to be rendered by React.
+
+![Account Menu](https://raw.githubusercontent.com/mvaleriani/Dialoq/master/app/assets/menu.gif)

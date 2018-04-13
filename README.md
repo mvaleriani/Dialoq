@@ -12,4 +12,5 @@ I built and designed the project over a 10-day period.
 * Live messaging with websockets 
 * Search functionality (to join servers, add friends, create private rooms etc.)
 
-![Dialoq Splash Page](https://raw.githubusercontent.com/mvaleriani/Dialoq/4349c21da8f42d4d65af5e0068ac8e04532fdb7c/Splash.gif)
+*![Dialoq Splash Page](https://raw.githubusercontent.com/mvaleriani/Dialoq/4349c21da8f42d4d65af5e0068ac8e04532fdb7c/Splash.gif)
+*![Main Page](https://raw.githubusercontent.com/mvaleriani/Dialoq/master/app/assets/Mainpage.gif)

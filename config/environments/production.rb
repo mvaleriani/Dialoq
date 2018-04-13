@@ -2,7 +2,7 @@ Rails.application.configure do
   # Settings specified here will take precedence over those in config/application.rb.
   config.middleware.use ChatActionCable
     config.web_socket_server_url = "wss//dialoq.herokuapp.com/"
-    config.action_cable.allowed_request_origins = ['dialoq.io, www.dialoq.io']
+    config.action_cable.allowed_request_origins = ['dialoq.io, www.dialoq.io', 'https://dialoq.herokuapp.com/']
   # Code is not reloaded between requests.
   config.cache_classes = true
 

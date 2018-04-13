@@ -28,7 +28,7 @@ class ServerColumn extends React.Component {
       this.props.fetchServerRooms(this.props.match.params.serverId);
       this.props.fetchServerMembers(this.props.match.params.serverId);
     } else {
-      this.props.fetchPMRooms();
+      // this.props.fetchPMRooms();
     }
 
     let addButton = document.getElementById('add-server-button');
@@ -78,7 +78,8 @@ class ServerColumn extends React.Component {
   }
 
   handlePMClick(e){
-    this.props.fetchPMRooms();
+    // this.props.fetchPMRooms();
+    this.props.clearRooms({});
   }
 
   render() {
@@ -91,7 +92,7 @@ class ServerColumn extends React.Component {
       }
 
       return (
-        <Link to={`/server/${server.id}`} onClick={this.handleServerClick} id={server.id}>
+        <Link to={`/server/${server.id}`} onClick={this.handleServerClick} id={server.id} key={server.id}>
           <button className="server-node" id={server.id} >
               <img src={server.icon_url} id={server.id}/>
           </button>
@@ -104,7 +105,7 @@ class ServerColumn extends React.Component {
         <Link to="/home" onClick={this.handlePMClick}>
           <button className="server-node">
             <img id="private-messages-icon" src="https://i.imgur.com/uNY8jM2.png" draggable="false"/>
-            
+
           </button>
         </Link>
         <div className="num-online"><span># ONLINE</span></div>

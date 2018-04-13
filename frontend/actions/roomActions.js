@@ -25,7 +25,13 @@ const receiveRoomMessages = messages => ({
   messages
 });
 
+export const clearMessages = emptyMessages => dispatch => (
+  dispatch(receiveRoomMessages(emptyMessages))
+);
 
+export const clearRooms = emptyRooms => dispatch => (
+  dispatch(receiveServerRooms(emptyRooms))
+);
 
 export const createRoom = room => dispatch => (
   APIUtil.createRoom(room).then(room => {
@@ -38,9 +44,6 @@ export const fetchServerRooms = serverId => dispatch => (
   APIUtil.fetchServerRooms(serverId).then(rooms => dispatch(receiveServerRooms(rooms)))
 );
 
-export const fetchPMRooms = () => dispatch => (
-  APIUtil.fetchPMRooms().then(rooms => dispatch(receiveServerRooms(rooms)))
-);
 
 export const fetchRoomMessages = roomId => dispatch => (
   APIUtil.fetchRoomMessages(roomId).then(messages => dispatch(receiveRoomMessages(messages)))

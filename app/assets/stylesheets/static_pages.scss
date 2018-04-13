@@ -638,6 +638,13 @@ button:focus {outline:0;}
           background-color: #E8E8E8;
           color: #202225;
           font-weight: 500;
+          transition-property: color, background-color, border;
+          transition-duration: .18s;
+        }
+        button:hover{
+          color: #E8E8E8;
+          background-color: #202225;
+          border: 1px solid #E8E8E8;
         }
       }
     }

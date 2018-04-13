@@ -6,5 +6,7 @@ test:
 
 production:
   adapter: redis
-  url: redis://localhost:6379/1
+  url: redis://redistogo:7509ab36e55a3b722521ed241b76a36d@koi.redistogo.com:9527/
+  host: koi.redistogo.com
+  port: 9527
   channel_prefix: Dialoq_production

@@ -37,6 +37,7 @@ class Header extends React.Component {
 
     this.props.createRoom(room);
     this.setState({name: '', chategory_name: ''})
+    this.settingsClick();
   }
 
   componentDidMount() {
@@ -65,7 +66,7 @@ class Header extends React.Component {
   }
 
   settingsClick(e){
-    e.preventDefault();
+    // e.preventDefault();
     this.animDir *= -1;
     if(this.animDir === 1){
       this.dir = [35, 60]

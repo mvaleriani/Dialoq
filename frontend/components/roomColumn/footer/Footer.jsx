@@ -87,7 +87,7 @@ class Footer extends React.Component {
       } else {
         this.dir = [60, 25]
       }
-      this.setState({settingsCollapse: !this.state.settingsCollapse, move: {top: (15 - this.animDir*200)}});
+      this.setState({settingsCollapse: !this.state.settingsCollapse, move: {top: (15 - this.animDir*265)}});
       this.setState({fake: !this.state.fake})
       this.settingsAnim.playSegments(this.dir,true);
 
@@ -120,6 +120,14 @@ class Footer extends React.Component {
         <button onClick={e=>this.settingsClick(e)} className="settings" id="account-settings">
           <div id='settings-anim-container'>
             <Collapse style={this.state.move} isOpened={this.state.settingsCollapse} id="account-settings-collapse-container">
+              <div id="settings-header" >
+                <img src={this.props.currentUser.image_url}></img>
+                <div>
+                <span>Account</span>
+                <span>Settings</span>
+                </div>
+              </div>
+
 
               <input value={this.state.currentMessage} onKeyPress={e=>this.handleKeyPress(e)} onChange={e=>this.updateCurrentMessage(e)} id="image-url-input" placeholder="Profile Pic url" type="text"></input>
               <div id="status-setting-div">

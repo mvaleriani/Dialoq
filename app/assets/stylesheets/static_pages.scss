@@ -828,17 +828,45 @@ button:focus {outline:0;}
         display: flex;
         flex-direction: column;
         align-items: center;
+        justify-content: center;
         position: absolute;
         text-shadow: 3px 3px black;
         width: 210px;
-        height: 1000px;
-        top: -15px;
+        height: 1200px;
+        top: 256px;
         left: -186px;
-        background-color: #37a1a78a;
+        background-color: #156D73;
         border-radius: 10px;
         transition-property: top;
         transition-duration: .3s;
-
+        #settings-header{
+          display: flex;
+          align-items: center;
+          margin-top: 10px;
+          div{
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            margin-left: 10px;
+          }
+          span{
+            text-shadow: none;
+            font-size: 15px;
+            font-weight: 800;
+            color: #202325;
+            text-shadow: 1px 1px 1px #474B51;
+          }
+          img{
+            border-radius: 50%;
+            width: 60px;
+            height: 60px;
+            overflow: hidden;
+            border: 4px solid #474B51;
+          }
+        }
+        #settings-header:hover{
+          cursor: default;
+        }
         #image-url-input{
           padding-left: 7px;
           padding-right: 7px;
@@ -874,6 +902,9 @@ button:focus {outline:0;}
             height: 22px;
             border-radius: 10px;
           }
+          span:hover{
+            cursor: default;
+          }
           #online-status-setting{
             display: flex;
             justify-content: center;
@@ -884,10 +915,18 @@ button:focus {outline:0;}
             height: 22px;
             background-color: #e8e8e8;
             border-radius: 8px;
+            border: 2px solid transparent;
+            transition-property: background-color, border;
+            transition-duration: .2s;
             #status-anim{
               height: 0px;
               width: 0px;
             }
+          }
+          #online-status-setting:hover{
+            background-color: #2F3136;
+            border: 2px solid #e8e8e8;
+            cursor: pointer;
           }
         }
         #logout-button{
@@ -911,7 +950,11 @@ button:focus {outline:0;}
           background-color: #2F3136;
           color: #e8e8e8;
           border: 2px solid white;
+          cursor: pointer;
         }
+      }
+      #account-settings-collapse-container:hover{
+        cursor: default;
       }
     }
     .profile-icon {
@@ -1087,7 +1130,7 @@ button:focus {outline:0;}
     background-color: #35393E;
     transition-property: background-color, border-radius;
     transition-duration: .3s;
-    
+
     img{
       // width: 100%;
       height: 51px;

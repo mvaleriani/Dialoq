@@ -6,5 +6,10 @@ Dialoq is a dynamic chat-based application, inspired by Slack and Discord. Ruby 
 I built and designed the project over a 10-day period.
 
 ## Features
+* Encrypted login (frontend to backend) using BCrypt with protected routes
+* Users can create Servers for any topic
+* Users can create sub-chatrooms within a Server
+* Live messaging with websockets 
+* Search functionality (to join servers, add friends, create private rooms etc.)
 
 ![Dialoq Splash Page](https://raw.githubusercontent.com/mvaleriani/Dialoq/4349c21da8f42d4d65af5e0068ac8e04532fdb7c/Splash.gif)

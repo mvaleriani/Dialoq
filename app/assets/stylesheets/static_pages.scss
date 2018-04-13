@@ -1073,6 +1073,7 @@ button:focus {outline:0;}
   .server-node {
     display: flex;
     justify-content: center;
+    flex-direction: column;
     align-items: center;
     overflow: hidden;
 
@@ -1086,7 +1087,7 @@ button:focus {outline:0;}
     background-color: #35393E;
     transition-property: background-color, border-radius;
     transition-duration: .3s;
-
+    
     img{
       // width: 100%;
       height: 51px;

@@ -24,6 +24,9 @@ class SessionForm extends React.Component {
   }
 
   renderErrors() {
+    if (!this.props.errors) {
+      return 0;
+    }
     return(
       <ul className="cred-errors">
         {this.props.errors.map((error, i) => (

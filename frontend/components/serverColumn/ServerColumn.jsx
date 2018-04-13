@@ -104,6 +104,7 @@ class ServerColumn extends React.Component {
         <Link to="/home" onClick={this.handlePMClick}>
           <button className="server-node">
             <img id="private-messages-icon" src="https://i.imgur.com/uNY8jM2.png" draggable="false"/>
+            
           </button>
         </Link>
         <div className="num-online"><span># ONLINE</span></div>

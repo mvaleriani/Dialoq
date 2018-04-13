@@ -1,24 +1,10 @@
-# README
+# Dialoq
+[Live Demo](http://dialoq.io/#/)
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+Dialoq is a dynamic chat-based application, inspired by Slack and Discord. Ruby on Rails is used as its backend MVC, with Postgresql for database management/querying. The site also utilizes [lottie-web](https://github.com/airbnb/lottie-web) for fluid, visually-appealing UI animations.
 
-Things you may want to cover:
+I built and designed the project over a 10-day period.
 
-* Ruby version
+## Features
 
-* System dependencies
-
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+![Dialoq Splash Page](https://raw.githubusercontent.com/mvaleriani/Dialoq/4349c21da8f42d4d65af5e0068ac8e04532fdb7c/Splash.gif)

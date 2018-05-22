@@ -78,16 +78,16 @@ class Navbar extends React.Component {
         </aside>
 
         <aside className="header-options">
-          <button className="header-button" id="notifications"></button>
-          <button className="header-button" id="pinned-button"></button>
-          <button className="header-button" id="toggle-member-index"></button>
+          <button className="header-button" id="notifications"><img src="https://i.imgur.com/qnvs2mh.png"/></button>
+          <button className="header-button" id="pinned-button"><img src="https://i.imgur.com/pAxlNnL.png"/></button>
+          <button className="header-button" id="toggle-member-index"><img src="https://i.imgur.com/eemW764.png"/></button>
           <input type="text"
                  className="search-field"
                  placeholder="Search"
                  onChange={e => this.handleSearchChange(e)}
                  value={this.state.searchStr}/>
           <button className="header-button" id="github"><a href="https://github.com/mvaleriani/Dialoq"><img src="http://www.iconsplace.com/icons/preview/white/github-256.png"></img></a></button>
-          <button className="header-button" id="gmail"><img src="https://orig00.deviantart.net/5736/f/2015/287/b/a/email_icon_by_caterised-d9d2lcs.png"></img></button>
+          <a href="mailto:michaelvaleriani@gmail.com" className="header-button" id="gmail"><img src="https://orig00.deviantart.net/5736/f/2015/287/b/a/email_icon_by_caterised-d9d2lcs.png"></img></a>
 
           <Collapse id="search-list" isOpened={this.state.open} springConfig={{stiffness: 800, damping: 20}}>
             {searchResults}

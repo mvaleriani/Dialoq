@@ -99,7 +99,7 @@ class ServerColumn extends React.Component {
         </Link>
       );
     });
-
+    
     return (
       <nav className="server-column">
         <Link to="/home" onClick={this.handlePMClick}>

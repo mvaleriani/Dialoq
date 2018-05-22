@@ -70,14 +70,14 @@ class MessageForm extends React.Component {
       <section className="message-form">
         <div id="spacer"></div>
         <section id="form-presentation">
-          <div id="add-file"></div>
+          <img src="https://i.imgur.com/8kp4PHo.png" id="add-file"/>
           <textarea onKeyPress={e => this.handleKeyPress(e)}
                     type="text"
                     id="message-input"
                     placeholder="Write new message"
                     onChange={e => this.updateCurrentMessage(e)}
                     value={this.state.currentMessage} />
-          <div id="emoji-input"></div>
+          <img src="https://i.imgur.com/NlMl9BR.png" id="emoji-input"/>
         </section>
       </section>
     )

@@ -322,12 +322,39 @@ button:focus {outline:0;}
         left: 2px;
       }
     }
+    #notifications{
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      img{
+        height: 23px;
+
+      }
+    }
     #gmail{
       display: flex;
       justify-content: center;
       align-items: center;
       img{
         height: 26px;
+
+      }
+    }
+    #pinned-button{
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      img{
+        height: 21px;
+
+      }
+    }
+    #toggle-member-index{
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      img{
+        height: 24px;
 
       }
     }
@@ -568,9 +595,10 @@ button:focus {outline:0;}
             min-width: 20px;
             margin-right: 24px;
             border-radius: 50%;
-            background-color: #7E8186;
-            border-color: #7E8186;
+            background-color: #474B51;
+            border-color: #474B51;
           }
+          
           button{
             display: flex;
             justify-content: center;
@@ -579,14 +607,15 @@ button:focus {outline:0;}
 
           }
           #emoji-input{
-            height: 20px;
-            width: 20px;
-            min-width: 20px;
+            height: 22px;
+            width: 22px;
+            min-width: 22px;
             margin-left: 2px;
             border-radius: 50%;
-            background-color: #7E8186;
-            border-color: #7E8186;
+            background-color: #474B51;
+            border-color: #474B51;
           }
+          
           #message-input{
             font-size: 14px;
             height: 16px;

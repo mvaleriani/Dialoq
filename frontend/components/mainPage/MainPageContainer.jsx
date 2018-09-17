@@ -1,8 +1,9 @@
 import { connect } from 'react-redux';
 import { logout } from '../../actions/sessionActions';
 import React from 'react';
-import MainPage from './MainPage'
 import {withRouter} from 'react-router-dom'
+
+import MainPage from './MainPage'
 
 const mapStateToProps = ({session}) => ({
   currentUser: session.currentUser

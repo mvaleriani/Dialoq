@@ -106,7 +106,12 @@ class Splash extends React.Component {
       <section className="splash">
         <img id="banner" src="https://i.imgur.com/xaIPFbM.png"></img>
         <div id="whale-splash"></div>
-        <img id="ocean" src="https://raw.githubusercontent.com/mvaleriani/Dialoq/master/app/assets/images/wave.png"></img>
+        <div className="ocean">
+          <img className="wave" id="wave0" src="https://raw.githubusercontent.com/mvaleriani/Dialoq/master/app/assets/images/wave0.png"></img>
+          <img className="wave" id="wave1" src="https://raw.githubusercontent.com/mvaleriani/Dialoq/master/app/assets/images/wave1.png"></img>
+          <img className="wave" id="wave2" src="https://raw.githubusercontent.com/mvaleriani/Dialoq/master/app/assets/images/wave2.png"></img>
+        </div>
+
         <div id="forms">
         <Collapse isOpened={true}>
           <button onClick={handleLoginClick} style={this.state.loginButtonStyle} className="splash-login-button">

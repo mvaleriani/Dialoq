@@ -43,44 +43,7 @@ class Splash extends React.Component {
       }
     });
     wPlayer.setSpeed(.5);
-
-    let ocean = document.getElementById('ocean');
-    let ctx = ocean.getContext('2d');
-    let ctxW = ctx.width;
-    let ctxH = ctx.height;
-    let ctxX = ctxW/2, ctxY = ctxH/2;
-    let rad = Math.PI/180;
-    let amplitude = ctxH;
-    let frequency = .01;
-    let phi = 0;
-    let frames = 0;
-    let stopped = true;
-    ctx.lineWidth = 4;
-    let y = 0
-
-    let draw = ()=>{
-      // console.log('drawing...');
-      
-      frames++;
-      phi = frames/30;
-
-      ctx.clearRect(0, 0, ctxW, ctxH);
-      ctx.beginPath();
-      ctx.strokeStyle = "blue";
-      ctx.fillStyle = '#fff'
-      ctx.moveTo(0, ctxH);
-      for (let x = 0; x < 400; x++) {
-        y = Math.sin(x*frequency + phi) * amplitude/2 + amplitude/2;
-        ctx.lineTo(x, y+40);
-      }
-      ctx.lineTo(400, ctxH);
-      ctx.lineTo(0, ctxH);
-      ctx.stroke();
-      window.requestAnimationFrame(draw);
-    }
-    window.requestAnimationFrame(draw);
-    // console.log('requested frame...');
-    
+  
   }
 
   render(){
@@ -143,7 +106,7 @@ class Splash extends React.Component {
       <section className="splash">
         <img id="banner" src="https://i.imgur.com/xaIPFbM.png"></img>
         <div id="whale-splash"></div>
-        <canvas id="ocean"></canvas>
+        <img id="ocean" src="https://raw.githubusercontent.com/mvaleriani/Dialoq/master/app/assets/images/wave.png"></img>
         <div id="forms">
         <Collapse isOpened={true}>
           <button onClick={handleLoginClick} style={this.state.loginButtonStyle} className="splash-login-button">

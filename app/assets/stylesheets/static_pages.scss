@@ -111,11 +111,23 @@ button:focus {outline:0;}
     to {bottom: 100px;}
 
 }
+@keyframes wave {
+  from{left: 0px;}
+  to{left: -20%; width: 120%;}
+}
 #ocean{
   position: absolute;
   bottom: -1px;
   width: 100%;
-  height: 250px;
+  height: 270px;
+  opacity: .7;
+  animation-name: wave;
+    animation-duration: 2s;
+    animation-iteration-count: infinite;
+    animation-timing-function: ease-in-out;
+    animation-direction: alternate;
+    animation-iteration-count: infinite;
+    animation-fill-mode: both;
   // background-color: rgba(0, 182, 218, 0.475);
 }
 .splash{

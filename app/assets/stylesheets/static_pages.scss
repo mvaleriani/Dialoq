@@ -97,8 +97,7 @@ button:focus {outline:0;}
 #demo-button{
   border-radius: 5px;
   background-color: #1E3C4F;
-
-
+  padding: 10px;
   max-height: 55px;
   margin-left: 30px;
   border: 1px solid transparent;
@@ -107,7 +106,18 @@ button:focus {outline:0;}
   font-weight: 600;
 
 }
+@keyframes bob {
+    from {bottom: 45px;}
+    to {bottom: 100px;}
 
+}
+#ocean{
+  position: absolute;
+  bottom: -1px;
+  width: 100%;
+  height: 250px;
+  // background-color: rgba(0, 182, 218, 0.475);
+}
 .splash{
   display: flex;
   align-items: center;
@@ -132,19 +142,11 @@ button:focus {outline:0;}
     left: 60px;
     bottom: 45px;
     transform: rotate(-10deg);
-  }
-  #water-splash-1{
-    position: absolute;
-    width: 674px;
-    bottom: -70px;
-    left: 0px;
-  }
-  #water-splash-2{
-    position: absolute;
-    width: 675px;
-    bottom: -70px;
-    right: 0px;
-    transform: scaleX(-1);
+    animation-name: bob;
+    animation-duration: 2s;
+    animation-iteration-count: infinite;
+    animation-timing-function: ease-in-out;
+    animation-direction: alternate-reverse;
   }
   a { margin: 15px; }
   Collapse{

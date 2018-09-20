@@ -97,14 +97,32 @@ button:focus {outline:0;}
 #demo-button{
   border-radius: 5px;
   background-color: #1E3C4F;
-  padding: 10px;
+  padding-top: 7px;
+  padding-bottom: 13px;
+  padding-left: 10px;
+  padding-right: 10px;
   max-height: 55px;
   margin-left: 30px;
-  border: 1px solid transparent;
-  color: #00B5DA;
+  border: 3px solid rgba(81, 179, 218, 0.637);
+  color: #ffffff;
   font-size: 30px;
   font-weight: 600;
+  animation: pulse 1.5s infinite;
+  animation-timing-function: ease-in-out;
+  box-shadow: 0 0 0 0 rgba(128, 207, 225, 0.406)
+}
+@keyframes pulse {
+  0% {
+    box-shadow: 0 0 0 0 rgba(128, 207, 225, 0.406);
+  }
+  70% {
 
+      box-shadow: 0 0 0 6px #80D0E1;
+  }
+  100% {
+
+      box-shadow: 0 0 0 0 rgba(128, 207, 225, .1);
+  }
 }
 @keyframes bob {
     from {bottom: 45px;}
@@ -113,18 +131,24 @@ button:focus {outline:0;}
 }
 @keyframes wave {
   from{left: 0px;}
-  to{left: -12.5%;}
+  to{left: -13%;}
+}
+@keyframes waveRight{
+  from{left: 100%;}
+  to{left: 87%;}
+
 }
 .ocean{
   position: absolute;
   bottom: -1px;
   width: 100%;
   height: 270px;
-  opacity: .7;
+  opacity: .6;
   display: flex;
   flex-direction: column;
   align-items: flex-start;
-  // background-color: #fff;
+  justify-content: flex-start;
+  overflow: hidden;
 }
 .wave{
   position: absolute;
@@ -142,32 +166,60 @@ button:focus {outline:0;}
   
   animation-direction: alternate-reverse;
 }
+#wave01{
+  animation-direction: alternate-reverse;
+  animation-name: waveRight;
+}
 
 #wave1{
   margin-top: -20px;
-  
 }
+#wave11{
+  animation-name: waveRight;
+  margin-top: -20px;
+}
+
 #wave2{
   animation-direction: alternate-reverse;
   margin-top: -40px;
 }
+#wave21{
+  animation-name: waveRight;
+  animation-direction: alternate-reverse;
+  margin-top: -40px;
+}
+
+#wave3{
+  margin-top: -60px;
+}
+#wave31{
+  animation-name: waveRight;
+  margin-top: -60px;
+}
+
 .splash{
   display: flex;
   align-items: center;
   justify-content: center;
-  background-color: #e8e8e8;
+  background-color: #031e30;
   position: relative;
-
+  overflow: hidden;
   height: 100vh;
   width: 100vw;
   overflow: scroll;
   background-position: center;
   background-size: cover;
   #banner{
-    position: absolute;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
     width: 600px;
-    top: 40px;
-    right:40px;
+    // top: 40px;
+    // margin-bottom: 30px;
+    font-family: 'Lemon', cursive;
+    color: #ffffff;
+    font-size: 70px;
+    text-shadow: 5px 5px #286B57;
   }
   #whale-splash{
     position: absolute;
@@ -185,12 +237,68 @@ button:focus {outline:0;}
   Collapse{
     z-index: 1000;
   }
+  #tagline{
+    position: absolute;
+    top: 5%;
+    right:5%;
+    height: fit-content;
+    width: fit-content;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-evenly;
+  }
+  #tagline-text{
+    display: flex;
+    justify-content: center;
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    font-size: 35px;
+    color: white;
+    font-weight: 500;
+    width: 600px;
+    height: fit-content;
+    margin-bottom: 20px;
+  }
+  #splash-desc{
+    display: flex;
+    justify-content: center;
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    font-size: 18px;
+    color: white;
+    width: 500px;
+    // margin-bottom: 50px;
+    text-shadow: 1px 1px #286B57;
+  }
+  #splash-spans{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: fit-content;
+    width: fit-content;
+    text-shadow: 2px 2px #286B57;
+  }
+  .login-input{
+    width: 85%;
+    height: 23px;
+    padding-left: 10px;
+    border: 1px solid rgba(81, 179, 218, 0.637);
+  }
+
+  .session-submit{
+      margin-top: 3px;
+      font-size: 14px;
+      width: 94%;
+      padding: 5px;
+      color: #ffffff;
+      text-shadow: 1px 1px #b8b9ba;
+  }
   #forms{
     display: flex;
     align-items: center;
     z-index: 1000;
-    position: absolute;
-    right: 110px;
+    margin-top: 50px;
+    transition: margin-top .3s;
   }
   .login-form{
     margin-top: 10px;
@@ -201,10 +309,10 @@ button:focus {outline:0;}
   .login{
     height: 20vh;
     min-height: 170px;
-
   }
   #login-label{
     text-shadow: 1px 1px black;
+    color: #ffffff;
   }
   #login-label:hover{
     cursor: pointer;
@@ -213,15 +321,14 @@ button:focus {outline:0;}
     display: flex;
     flex-direction: column;
     align-items: center;
-
   }
   .signup{
     height: 20vh;
     min-height: 170px;
-
   }
   #signup-label{
     text-shadow: 1px 1px black;
+    color: #ffffff;
   }
   #signup-label:hover{
     cursor: pointer;
@@ -237,15 +344,19 @@ button:focus {outline:0;}
     font-weight: 700;
 
     .session-submit{
-      margin: 7px;
-      font-size: 12px;
+      margin-top: 3px;
+      font-size: 14px;
+      width: 94%;
+      background-color: #f7a66c;
+      color: #ffffff;
+      text-shadow: 1px 1px #b8b9ba;
     }
     .session-submit:hover{
-      background-color: #f7a66c;
+      background-color: #80D0E1;
+      
     }
-    border-color: transparent;
+    // border-color: transparent;
     height: 55px;
-    // min-height: 235px;
     max-height: 280px;
     width: 140px;
     border-radius: 5px;
@@ -259,16 +370,16 @@ button:focus {outline:0;}
       cursor:pointer
     }
     input{
-      border-style: none;
-      border-radius: 5px;
+      // border: 1px solid rgba(81, 179, 218, 0.637);
+      border-radius: 3px;
 
       padding: 5px;
-      margin-bottom: 5px;
+      padding-left: 10px;
+      padding-right: 10px;
+      margin-bottom: 7px;
     }
   }
   .splash-login-button:hover{
-
-    // color: #1E3C4F;
     cursor: pointer;
   }
 
@@ -281,15 +392,17 @@ button:focus {outline:0;}
     font-weight: 700;
     overflow: hidden;
     .session-submit{
-      margin: 7px;
-      font-size: 12px;
+      margin-top: 3px;
+      font-size: 14px;
+      background-color: #f7a66c;
+      color: #ffffff;
+      text-shadow: 1px 1px #b8b9ba;
     }
     .session-submit:hover{
-      background-color: #f7a66c;
+      background-color: #80D0E1;
     }
     border-color: transparent;
     height: 55px;
-    // min-height: 235px;
     max-height: 280px;
     width: 150px;
     border-radius: 5px;
@@ -303,15 +416,16 @@ button:focus {outline:0;}
       cursor:pointer
     }
     input{
-      border-style: none;
-      border-radius: 5px;
+      // border: 1px solid rgba(81, 179, 218, 0.637);
+      border-radius: 3px;
 
       padding: 5px;
-      margin-bottom: 5px;
+      padding-left: 10px;
+      padding-right: 10px;
+      margin-bottom: 7px;
     }
   }
   .splash-signup-button:hover{
-    // color: #1E3C4F;
     cursor: pointer;
   }
 }
@@ -468,7 +582,6 @@ button:focus {outline:0;}
         transition-duration: .2s;
         .search-result{
           display: flex;
-          // align-items:center;
           z-index: 5000;
           width: 180px;
           margin-left: 10px;
@@ -532,8 +645,6 @@ button:focus {outline:0;}
         display: flex;
         flex-direction: column;
         align-items: center;
-
-        // justify-content: flex-end;
         padding-left: 25px;
         padding-right: 25px;
         overflow: scroll;
@@ -555,18 +666,13 @@ button:focus {outline:0;}
           min-height: fit-content;
           margin-left: 25px;
           margin-right: 25px;
-          // margin-top: 20px;
-          // padding-bottom: 45px;
-          // overflow:scroll;
           .icon{
             height: 40px;
             width: 40px;
             min-width: 40px;
             overflow: hidden;
             border-radius: 50%;
-
             margin-top: 20px;
-            // margin-bottom: 20px;
             img{
               height: 40px;
               width: 40px;
@@ -576,7 +682,6 @@ button:focus {outline:0;}
             margin-left: 20px;
             margin-top: 19px;
             height: fit-content;
-            // margin-bottom: 15px;
             display: block;
             flex-direction: column;
             font-size: 15px;

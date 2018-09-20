@@ -12,15 +12,15 @@ class Splash extends React.Component {
   constructor(props) {
     super(props);
 
-    let loginButtonStyle = {padding: '7px'};
-    let signupButtonStyle = {padding: '7px'};
+    let loginButtonStyle = { padding: '7px', border: "3px solid rgba(81, 179, 218, 0.637)"};
+    let signupButtonStyle = { padding: '7px', border: "3px solid rgba(81, 179, 218, 0.637)"};
     let labelMargin = {margin: '0px'};
     let lFormText = {color: 'transparentize(white, 1)'}
     let sFormText = {color: 'transparentize(white, 1)'}
     let lClicked = false;
     let sClicked = false;
-
-    this.state = {loginOpened: false, signupOpened: false, lClicked, sClicked, loginButtonStyle, signupButtonStyle, labelMargin};
+    let formStyle = {marginTop: '50px'}
+    this.state = {loginOpened: false, signupOpened: false, lClicked, sClicked, loginButtonStyle, signupButtonStyle, labelMargin, formStyle};
   }
 
   componentDidMount(){
@@ -52,18 +52,20 @@ class Splash extends React.Component {
       if ((e === 'fake' && this.state.loginOpened)  || (e !== 'fake' && !this.state.loginOpened)){
 
         this.setState({loginOpened: !this.state.loginOpened})
-
+        this.setState({formStyle: {marginTop: '20px'}})
         if (!this.state.loginOpened) {
           this.setState({loginButtonStyle: {
+            cursor: 'pointer',
             width: '250px',
-            height: '30vh',
-            
-            minHeight: '280px',
-            labelMargin: {margin: '7px'}}
+            height: '220px',
+            border: "3px solid rgba(81, 179, 218, 0.637)",
+            labelMargin: {margin: '7px'},
+            paddingTop: '7px'}
           })
         } else {
-          this.setState({loginButtonStyle: {padding: '7px'},
-          labelMargin: {margin: '0px'}})
+          this.setState({
+            loginButtonStyle: { padding: '7px', border: "3px solid rgba(81, 179, 218, 0.637)"},
+            labelMargin: { marginTop: '7px' }, })
         }
       }
 
@@ -75,17 +77,18 @@ class Splash extends React.Component {
     const handleSignupClick = (e) => {
       if ((e === 'fake' && this.state.signupOpened)  || (e !== 'fake' && !this.state.signupOpened)){
         this.setState({signupOpened: !this.state.signupOpened})
-
+        this.setState({ formStyle: { marginTop: '20px' } })
         if (!this.state.signupOpened) {
           this.setState({signupButtonStyle: {
             width: '250px',
-            height: '30vh',
-
-            minHeight: '280px',
-            labelMargin: {margin: '7px'}}
+            height: '220px',
+            border: "3px solid rgba(81, 179, 218, 0.637)",
+            labelMargin: {margin: '7px'},
+            paddingTop: '7px',
+            cursor: 'pointer'}
           })
         } else {
-          this.setState({signupButtonStyle: {padding: '7px'}, labelMargin: {margin: '0px'}})
+          this.setState({ signupButtonStyle: { padding: '7px', cursor: 'pointer', border: "3px solid rgba(81, 179, 218, 0.637)",}, labelMargin: {marginTop: '7px'}})
         }
       }
 
@@ -104,35 +107,72 @@ class Splash extends React.Component {
 
     return (
       <section className="splash">
-        <img id="banner" src="https://i.imgur.com/xaIPFbM.png"></img>
+       
         <div id="whale-splash"></div>
         <div className="ocean">
           <img className="wave" id="wave0" src="https://raw.githubusercontent.com/mvaleriani/Dialoq/master/app/assets/images/wave0.png"></img>
+          <img className="wave" id="wave01" src="https://raw.githubusercontent.com/mvaleriani/Dialoq/master/app/assets/images/wave0.png"></img>
+
           <img className="wave" id="wave1" src="https://raw.githubusercontent.com/mvaleriani/Dialoq/master/app/assets/images/wave1.png"></img>
+          <img className="wave" id="wave11" src="https://raw.githubusercontent.com/mvaleriani/Dialoq/master/app/assets/images/wave1.png"></img>
+
           <img className="wave" id="wave2" src="https://raw.githubusercontent.com/mvaleriani/Dialoq/master/app/assets/images/wave2.png"></img>
+          <img className="wave" id="wave21" src="https://raw.githubusercontent.com/mvaleriani/Dialoq/master/app/assets/images/wave2.png"></img>
+
+          <img className="wave" id="wave3" src="https://raw.githubusercontent.com/mvaleriani/Dialoq/master/app/assets/images/wave31.png"></img>
+          <img className="wave" id="wave31" src="https://raw.githubusercontent.com/mvaleriani/Dialoq/master/app/assets/images/wave31.png"></img>
+
         </div>
 
-        <div id="forms">
-        <Collapse isOpened={true}>
-          <button onClick={handleLoginClick} style={this.state.loginButtonStyle} className="splash-login-button">
-            <label style={this.state.labelMargin} id="login-label">Log In</label>
-            <Collapse className="login-collapse" isOpened={this.state.loginOpened} springConfig={presets.noWobble}>
-              <LoginFormContainer />
+        <main id="tagline">
+          <div id="banner">
+            <svg width="177" height="192" viewBox="0 0 177 192" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path d="M89 159H50L86.5 190C87.5086 190.891 88.051 191.037 89 191V159Z" fill="#51B3DA" />
+            <path d="M155 1.01722H88L88.5 159.017H127.417L128 158.517H153C165.236 154.649 170.65 150.727 176 138.517C176.674 136.3 176.899 134.884 177 132.017V28.0172C176.505 21.9563 176.024 20.0895 175 18.0172C169.558 7.17339 160.392 0.618341 155 1.01722Z" fill="#51B3DA" />
+            <path d="M22.1236 1.01722H89.5L88.9972 159H49.8619L49.2753 158.5H24.1348C11.83 154.632 6.3861 150.711 1.00562 138.502C0.327429 136.285 0.101688 134.869 0 132.003V28.0143C0.497891 21.954 0.981435 20.0874 2.01124 18.0154C7.48425 7.17271 16.7016 0.618382 22.1236 1.01722Z" fill="#80D0E1" />
+            <path d="M89 191V159L128.5 158.5L92.5 189.5L90 191H89Z" fill="#238CC5" />
+            <circle cx="114.5" cy="111.5" r="8.5" fill="#2C3E50" />
+            <circle cx="139.5" cy="111.5" r="8.5" fill="#2C3E50" />
+            <circle cx="139.5" cy="79.5" r="8.5" fill="#2C3E50" />
+            <circle cx="89.5" cy="79.5" r="8.5" fill="#2C3E50" />
+            <circle cx="64.5" cy="47.5" r="8.5" fill="#2C3E50" />
+            <circle cx="38.5" cy="47.5" r="8.5" fill="#2C3E50" />
+            <circle cx="38.5" cy="79.5" r="8.5" fill="#2C3E50" />
+            <path d="M89 39H140V56H89V39Z" fill="#2C3E50" />
+            <path d="M148 47.5C148 52.1944 144.194 56 139.5 56C134.806 56 131 52.1944 131 47.5C131 42.8056 134.806 39 139.5 39C144.194 39 148 42.8056 148 47.5Z" fill="#2C3E50" />
+            <path d="M98 47.5C98 52.1944 94.1944 56 89.5 56C84.8056 56 81 52.1944 81 47.5C81 42.8056 84.8056 39 89.5 39C94.1944 39 98 42.8056 98 47.5Z" fill="#2C3E50" />
+            <path d="M38 103H89V120H38V103Z" fill="#2C3E50" />
+            <path d="M97 111.5C97 116.194 93.1944 120 88.5 120C83.8056 120 80 116.194 80 111.5C80 106.806 83.8056 103 88.5 103C93.1944 103 97 106.806 97 111.5Z" fill="#2C3E50" />
+            <path d="M47 111.5C47 116.194 43.1944 120 38.5 120C33.8056 120 30 116.194 30 111.5C30 106.806 33.8056 103 38.5 103C43.1944 103 47 106.806 47 111.5Z" fill="#2C3E50" />
+          </svg>
+            <h1 id="main-title">Dialoq</h1>
+          </div>
+          <div id="splash-spans">
+            <span id="tagline-text">It's time to ditch Discord and Slack.</span>
+            <span id="splash-desc" style={{marginBottom: "10px"}}> All-in-one text chat that's free, secure, and works all over the web. Stop paying for what should be base chat services. 
+            </span>
+            <span id="splash-desc">Simplify your life.</span>
+          </div>
+          <div id="forms" style={this.state.formStyle}>
+            <Collapse isOpened={true}>
+              <button onClick={handleLoginClick} style={this.state.loginButtonStyle} className="splash-login-button">
+                <label style={this.state.labelMargin} id="login-label">Log In</label>
+                <Collapse className="login-collapse" isOpened={this.state.loginOpened} springConfig={presets.noWobble}>
+                  <LoginFormContainer />
+                </Collapse>
+              </button>
             </Collapse>
-          </button>
-        </Collapse>
-
-        <Collapse isOpened={true}>
-          <button onClick={handleSignupClick} style={this.state.signupButtonStyle} className="splash-signup-button">
-            <label style={this.state.labelMargin} id="signup-label">Sign Up</label>
-            <Collapse className="signup-collapse" isOpened={this.state.signupOpened} springConfig={presets.noWobble}>
-              <SignupFormContainer />
+            <Collapse isOpened={true}>
+              <button onClick={handleSignupClick} style={this.state.signupButtonStyle} className="splash-signup-button">
+                <label style={this.state.labelMargin} id="signup-label">Sign Up</label>
+                <Collapse className="signup-collapse" isOpened={this.state.signupOpened} springConfig={presets.noWobble}>
+                  <SignupFormContainer />
+                </Collapse>
+              </button>
             </Collapse>
-          </button>
-        </Collapse>
-
-        <button id="demo-button" onClick={handleDemoClick}>Demo</button>
-        </div>
+            <button id="demo-button" onClick={handleDemoClick}>Demo</button>
+          </div>
+        </main>
     </section>
     );
   }

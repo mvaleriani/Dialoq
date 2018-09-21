@@ -103,10 +103,9 @@ class ServerColumn extends React.Component {
     
     return (
       <nav className="server-column">
-        <Link to="/home" onClick={this.handlePMClick} style={{display: "flex", justifyContent: 'center'}}>
-          <button className="server-node">
+        <Link to="/home" onClick={this.handlePMClick} className="server-node" style={{display: "flex", justifyContent: 'center'}}>
             <img id="private-messages-icon" src="https://i.imgur.com/uNY8jM2.png" draggable="false"/>
-          </button>
+            <span className="server-tag">Home</span>
         </Link>
         <div className="num-online" ><span># ONLINE</span></div>
         <section id="server-list" >

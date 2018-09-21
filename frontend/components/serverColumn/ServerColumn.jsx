@@ -102,18 +102,18 @@ class ServerColumn extends React.Component {
     
     return (
       <nav className="server-column">
-        <Link to="/home" onClick={this.handlePMClick}>
+        <Link to="/home" onClick={this.handlePMClick} style={{display: "flex", justifyContent: 'center'}}>
           <button className="server-node">
             <img id="private-messages-icon" src="https://i.imgur.com/uNY8jM2.png" draggable="false"/>
-
           </button>
         </Link>
-        <div className="num-online"><span># ONLINE</span></div>
-
-        {serverNodes}
-
-        <button id="add-server-button" onClick={this.handleAddServerClick}></button>
-
+        <div className="num-online" ><span># ONLINE</span></div>
+        <section id="server-list" >
+          {serverNodes}
+        </section>
+        <div style={{flex: 1}}>
+          <button id="add-server-button" onClick={this.handleAddServerClick}></button>
+        </div>
 
         <Collapse id="server-form-collapse" isOpened={this.state.formCollapse} style={this.state.move}>
           <CreateServerFormContainer />

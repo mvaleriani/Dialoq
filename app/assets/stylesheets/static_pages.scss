@@ -7,6 +7,22 @@ html, body {
 body{
   margin: 0px;
 }
+::-webkit-scrollbar {
+    display: none;
+}
+// ::-webkit-scrollbar-track {
+//     background: transparent; 
+// }
+// ::-webkit-scrollbar-corner{
+//   display: none;
+//   height: 0px;
+// }
+// ::-webkit-scrollbar-thumb {
+//     background: rgba(72, 75, 82, 0.418);
+//     border-radius: 7px; 
+// }
+
+
 .app {
   display: flex;
   justify-content: center;
@@ -445,6 +461,25 @@ button:focus {outline:0;}
   overflow: hidden;
   position: absolute;
 
+
+  ::-webkit-scrollbar {
+    width: 7px;
+    display: block;
+    z-index: 100;
+    // margin-left: 3px;
+  }
+  ::-webkit-scrollbar-track {
+      background: transparent; 
+  }
+  ::-webkit-scrollbar-corner{
+    display: none;
+    height: 0px;
+    // background: transparent;
+  }
+  ::-webkit-scrollbar-thumb {
+      background: rgba(72, 75, 82, .5);
+      border-radius: 7px; 
+  }
 }
 
 .room {
@@ -1193,17 +1228,64 @@ button:focus {outline:0;}
   flex-direction: column;
   align-items: center;
   position: relative;
-  overflow-x:visible;
+  overflow-x: visible;
   max-height: 100%;
   width: 70px;
   min-width: 70px;
   height: 100vh;
   background-color: #202225;
+  .server-tag{
+    color:#fff;
+    position:absolute;
+    // font-family:sans-serif;
+    left: 50%;
+    padding:5px 7px;
+    z-index:100;
+    font-size:14px;
+    border-radius:2px;
+    background:rgb(0, 150, 148);
+    visibility:hidden;
+    opacity:0;
+    width: max-content;
+    transition: all .2s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+  }
+  .server-node{
+    // position: relative;
+    // overflow: visible;
+  }
+  .server-node:hover .server-tag{
+    left: 100%;
+    // bottom: 200px;
+    visibility:visible;
+    opacity:1;
+    z-index: 20000;
+  }
+  .server-tag:before {
+    content:'';
+    width: 0; 
+    height: 0; 
+    border-top: 5px solid transparent;
+    // border-right: 5px solid transparent;
+    border-bottom: 5px solid transparent;
+    border-right: 5px solid rgb(0, 150, 148);
+    position:absolute;
+    left:-5px;
+    bottom:8px;
+  }
   #server-list{
     height: fit-content;
     max-height: fit-content;
-    overflow: scroll;
+    overflow-y: hidden;
+    margin-left: 10px;
+    margin-right: 10px;
   }
+  #server-list:hover{
+    overflow-y: scroll;
+    // margin-top: -10px;
+    margin-right: 3px;
+    // position: absolute;
+  }
+  
   input:focus{
     border-color: transparent;
   }

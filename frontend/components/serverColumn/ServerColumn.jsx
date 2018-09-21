@@ -92,10 +92,11 @@ class ServerColumn extends React.Component {
       }
 
       return (
-        <Link to={`/server/${server.id}`} onClick={this.handleServerClick} id={server.id} key={server.id}>
-          <button className="server-node" id={server.id} >
+        <Link to={`/server/${server.id}`} onClick={this.handleServerClick} className="server-node" id={server.id} key={server.id}>
+          {/* <button className="server-node" id={server.id}> */}
               <img src={server.icon_url} id={server.id}/>
-          </button>
+              <span className="server-tag">{server.name}</span>
+          {/* </button> */}
         </Link>
       );
     });

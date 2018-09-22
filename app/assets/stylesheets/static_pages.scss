@@ -685,8 +685,8 @@ button:focus {outline:0;}
         display: flex;
         flex-direction: column;
         align-items: center;
-        padding-left: 25px;
-        padding-right: 25px;
+        // padding-left: 25px;
+        // padding-right: 25px;
         overflow: scroll;
         scroll-behavior: smooth;
         .spacer{
@@ -699,7 +699,7 @@ button:focus {outline:0;}
         .message {
           width: 92%;
           height: fit-content;
-          border-bottom: 1px solid #484B52;
+          border-top: 1px solid rgba(72, 75, 82, 0.528);
           display: flex;
           justify-content: flex-start;
 
@@ -841,7 +841,7 @@ button:focus {outline:0;}
       .member{
         width: 210px;
         height: 40px;
-        border-radius: 10px;
+        border-radius: 7px;
         display: flex;
         align-items: center;
         margin-left: 15px;
@@ -1252,6 +1252,7 @@ button:focus {outline:0;}
   .server-node{
     // position: relative;
     // overflow: visible;
+    // transition: border-radius .2s cubic-bezier(0.68, -0.55, 0.265, 1.55);
   }
   .server-node:hover .server-tag{
     left: 100%;
@@ -1403,8 +1404,21 @@ button:focus {outline:0;}
   }
   .server-node:hover {
     background-color: #37a1a78a;
-    border-radius: 15px;
+    // border-radius: 15px;
+    animation: easeOutBounce .5s;
+    animation-iteration-count: 1;
+    animation-fill-mode: forwards;
     cursor: pointer;
+  }
+  @keyframes easeOutBounce {
+        0% {border-radius: 50%; -webkit-animation-timing-function: ease-in;}
+        33% {border-radius: 15px; -webkit-animation-timing-function: ease-out;}
+        50% {border-radius: 12px; -webkit-animation-timing-function: ease-in;}
+        66% {border-radius: 15px; -webkit-animation-timing-function: ease-out;}
+        82% {border-radius: 13px; -webkit-animation-timing-function: ease-in;}
+        92% {border-radius: 15px; -webkit-animation-timing-function: ease-out;}
+        97% {border-radius: 14px; -webkit-animation-timing-function: ease-in;}
+        100% { border-radius: 15px;}
   }
   .num-online {
     height: 25px;

@@ -125,7 +125,7 @@ class ServerColumn extends React.Component {
     } else{
       homeSelect = "";
     }
-    // { display: "flex", justifyContent: 'center' }
+
     return (
       <nav className="server-column">
         <Link to="/home" onClick={this.handlePMClick} className="server-node" style={homeSelectStyle}>
@@ -133,7 +133,7 @@ class ServerColumn extends React.Component {
             <span className="server-tag">Home</span>
             {homeSelect}
         </Link>
-        <div className="num-online" ><span># ONLINE</span></div>
+        <div className="num-online" ><span>SERVERS</span></div>
         <section id="server-list" >
           {serverNodes}
         </section>

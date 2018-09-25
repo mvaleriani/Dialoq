@@ -1,4 +1,5 @@
 import React from 'react';
+import ReactPlayer from 'react-player';
 import ActionCable from 'actioncable';
 
 class MessageIndex extends React.Component {
@@ -46,13 +47,25 @@ class MessageIndex extends React.Component {
   render(){
     let messages = [];
     if (this.props.messages.length > 0) {
-
+      
       this.props.messages.forEach(message => {
         let userId = message.user_id
         if (message !== undefined && this.props.serverMembers[userId]!== undefined){
           let messageBody = (<p>{message.body}</p>)
           if (message.body.includes('https')) {
-            messageBody = (<p><a style={{color: "#325D7E"}} href={message.body}>{message.body}</a></p>)
+            let player = '';
+            if(ReactPlayer.canPlay(message.body)){
+              player = (<ReactPlayer url={message.body} playing={false} width='92%' controls={true} playsinline={true} />);
+            }
+
+            messageBody = (
+              <div style={{marginTop: '20px', width: '100%'}}>
+                {player}
+                <p>
+                  <a style={{color: "#325D7E"}} href={message.body}>{message.body}</a>
+                </p>
+              </div>
+            );
           }
           messages.push(
           <section className="message">

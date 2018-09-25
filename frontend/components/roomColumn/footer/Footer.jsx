@@ -84,7 +84,7 @@ class Footer extends React.Component {
       this.animDir *= -1;
       if(this.animDir === 1){
         this.dir = [30, 60]
-        this.props.openModal(e);
+        this.props.openModal('user');
       } else {
         this.dir = [60, 25]
         this.props.closeModal();

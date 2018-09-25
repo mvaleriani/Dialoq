@@ -722,6 +722,7 @@ button:focus {outline:0;}
             margin-left: 20px;
             margin-top: 19px;
             height: fit-content;
+            width: -webkit-fill-available;
             display: block;
             flex-direction: column;
             font-size: 15px;
@@ -854,7 +855,7 @@ button:focus {outline:0;}
           width: 30px;
           border-radius: 50%;
           overflow: hidden;
-
+          
           img{
             height: inherit;
             width: inherit;

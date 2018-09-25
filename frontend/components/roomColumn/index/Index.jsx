@@ -22,7 +22,11 @@ class Index extends React.Component {
   }
 
   handleRoomClick(e){
-
+    if (e.target.currentTarget){
+      if (e.target.currentTarget.id != this.props.match.params.roomId) {
+        this.props.clearMessages({});
+      }
+    }
   }
 
   render(){
@@ -30,14 +34,14 @@ class Index extends React.Component {
     const rooms = this.props.rooms.map(room => {
 
       return(
-        <NavLink activeClassName="selected-room" onClick={this.handleRoomClick} className="room-link" to={`/server/${room.server_id}/room/${room.id}`}>
+        <NavLink activeClassName="selected-room" id={room.id} onClick={this.handleRoomClick} className="room-link" to={`/server/${room.server_id}/room/${room.id}`}>
           <span># </span>{room.name}
         </NavLink>
       );
     });
 
     return (
-      <section className="room-index">
+      <section className="room-index" style={{ scrollBehavior: 'auto'}}>
 
         {rooms}
       </section>

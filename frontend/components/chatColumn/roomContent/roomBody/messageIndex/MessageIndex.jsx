@@ -26,7 +26,7 @@ class MessageIndex extends React.Component {
       this.createSocket();
     }
     let index = document.getElementById('message-index');
-    index.scrollTo({top: index.scrollHeight, behavior:'auto'})
+    index.scrollTo({top: index.scrollHeight, behavior:'instant'})
 
   }
 
@@ -60,9 +60,9 @@ class MessageIndex extends React.Component {
 
             messageBody = (
               <div style={{marginTop: '20px', width: '100%'}}>
-                {player}
                 <p>
                   <a style={{color: "#325D7E"}} href={message.body}>{message.body}</a>
+                  {player}
                 </p>
               </div>
             );

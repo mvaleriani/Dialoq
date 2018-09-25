@@ -55,11 +55,11 @@ class MessageIndex extends React.Component {
           if (message.body.includes('https')) {
             let player = '';
             if(ReactPlayer.canPlay(message.body)){
-              player = (<ReactPlayer url={message.body} playing={false} width='92%' controls={true} playsinline={true} />);
+              player = (<ReactPlayer url={message.body} style={{marginTop: '15px'}} playing={false} width='92%' controls={true} playsinline={true} />);
             }
 
             messageBody = (
-              <div style={{marginTop: '20px', width: '100%'}}>
+              <div style={{width: '100%'}}>
                 <p>
                   <a style={{color: "#325D7E"}} href={message.body}>{message.body}</a>
                   {player}

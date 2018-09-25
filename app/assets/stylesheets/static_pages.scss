@@ -502,6 +502,16 @@ button:focus {outline:0;}
     justify-content: space-between;
     align-items: center;
     border-bottom: 1px solid #202225;
+
+    .navbar-icon{
+      fill: rgba(255, 255, 255, 0.7);
+      transition: fill .1s;
+      // stroke: rgba(255, 255, 255, 0.5);
+    }
+    .navbar-icon:hover{
+      fill: #fff;
+    }
+
     #github{
       position: relative;
       img{
@@ -571,26 +581,27 @@ button:focus {outline:0;}
 
       position: relative;
       .header-button{
-        margin-right: 10px;
+        margin-right: 7px;
         height: 34px;
         width: 34px;
-        background-color: #4B4D53;
+        background-color: #36393F;
         border-color: transparent;
         border-radius: 10px;
       }
       .header-button:hover{
-        background-color: #202225;
+        // background-color: #202225;
       }
       .search-field{
         height: 28px;
         width: 114px;
-        margin-right: 10px;
+        margin-right: 7px;
         padding-left: 10px;
         padding-right: 10px;
-        font-size: 15px;
-        color: #C3C4C6;
-        font-weight: 300;
-        border-radius: 10px;
+        font-size: 13px;
+        font-weight: 600;
+        color: rgb(213, 213, 215);
+        // font-weight: 300;
+        border-radius: 3px;
         border: transparent;
         background-color: #4B4D53;
         transition-property: width;
@@ -613,9 +624,9 @@ button:focus {outline:0;}
         height: fit-content;
 
 
-        width: 200px;
+        width: 220px;
         z-index: 200;
-        right: 90px;
+        right: 88px;
         background-color: #35393E;
         border-radius: 10px;
         border-top-left-radius: 0px;
@@ -626,7 +637,7 @@ button:focus {outline:0;}
         .search-result{
           display: flex;
           z-index: 5000;
-          width: 180px;
+          width: 200px;
           margin-left: 10px;
           margin-right: 10px;
           margin-top: 5px;
@@ -669,6 +680,7 @@ button:focus {outline:0;}
 
   }
 
+ 
   .room-content {
     display: flex;
     flex-direction: row;
@@ -692,6 +704,7 @@ button:focus {outline:0;}
         // padding-right: 25px;
         overflow: scroll;
         scroll-behavior: smooth;
+        
         .spacer{
           margin-left: 25px;
           margin-right: 25px;
@@ -822,9 +835,12 @@ button:focus {outline:0;}
       display: flex;
       flex-direction: column;
       overflow: scroll;
+      overflow-x: hidden;
       width: 240px;
       min-width: 240px;
       background-color: #2f3136;
+      transition: min-width .1s;
+      
       #online-members{
         margin-top: 30px;
         spacer{

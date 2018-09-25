@@ -93,8 +93,9 @@ class ServerColumn extends React.Component {
   }
 
   handlePMClick(e){
-    // this.props.fetchPMRooms();
     this.props.clearRooms({});
+    this.props.clearMessages({});
+    // this.props.fetchPMRooms();
   }
 
   render() {

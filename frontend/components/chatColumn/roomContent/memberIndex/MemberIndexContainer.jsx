@@ -2,7 +2,7 @@ import { connect } from 'react-redux';
 import React from 'react';
 import MemberIndex from './MemberIndex';
 import {withRouter} from 'react-router';
-
+import { toggleMemberIndex } from '../../../../actions/uiActions'
 
 const mapStateToProps = (state, ownProps) => {
     let onlineMembers = [];
@@ -32,11 +32,11 @@ const mapStateToProps = (state, ownProps) => {
     //     }
     //   });
     // }
-    return {onlineMembers, offlineMembers};
+    return {onlineMembers, offlineMembers, memberIndexState: state.ui.components.memberIndex};
 };
 
 const mapDispatchToProps = dispatch => ({
-
+  toggleMemberIndex: toggleBool => dispatch(toggleMemberIndex(toggleBool))
 });
 
 export default withRouter(connect(

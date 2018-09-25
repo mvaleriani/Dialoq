@@ -18,6 +18,8 @@ class MessageIndex extends React.Component {
   componentWillReceiveProps(newProps){
     if (newProps.match.params.roomId !== this.props.match.params.roomId) {
       this.props.fetchRoomMessages(newProps.match.params.roomId)
+      let index = document.getElementById('message-index');
+      index.scrollTo({ top: index.scrollHeight, behavior: 'instant' })
     }
   }
 
@@ -25,8 +27,7 @@ class MessageIndex extends React.Component {
     if (prevProps.match.params.roomId !== this.props.match.params.roomId) {
       this.createSocket();
     }
-    let index = document.getElementById('message-index');
-    index.scrollTo({top: index.scrollHeight, behavior:'instant'})
+    
 
   }
 

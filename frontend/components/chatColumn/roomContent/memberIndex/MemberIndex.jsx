@@ -4,10 +4,21 @@ import React from 'react';
 class MemberIndex extends React.Component {
   constructor(props){
     super(props)
+    this.state = {
+      memberIndexStyle: {},
+    }
   }
 
   componentDidMount() {
+    this.props.toggleMemberIndex(true)
+  }
 
+  componentWillReceiveProps(nextProps){
+    if (nextProps.memberIndexState) {
+      this.setState({ memberIndexStyle: {}});
+    }else if(nextProps.memberIndexState === false){
+      this.setState({ memberIndexStyle: {minWidth: '0px', width: '0px'} });
+    }
   }
 
   render(){
@@ -44,7 +55,7 @@ class MemberIndex extends React.Component {
     }
 
     return (
-      <aside className="member-index">
+      <aside className="member-index" style={this.state.memberIndexStyle}>
 
         <section id="online-members">
           <span>ONLINE - {onlineMembers.length}</span>

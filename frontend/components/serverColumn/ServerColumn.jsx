@@ -86,6 +86,7 @@ class ServerColumn extends React.Component {
 
   handleServerClick(e){
     if (this.props.match.params.serverId !== e.target.id) {
+      this.props.clearMessages({});
       this.props.fetchServerRooms(e.target.id);
       this.props.fetchServerMembers(e.target.id);
     } 

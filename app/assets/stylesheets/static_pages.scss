@@ -466,6 +466,7 @@ button:focus {outline:0;}
     width: 7px;
     display: block;
     z-index: 100;
+
     // margin-left: 3px;
   }
   ::-webkit-scrollbar-track {
@@ -477,8 +478,10 @@ button:focus {outline:0;}
     // background: transparent;
   }
   ::-webkit-scrollbar-thumb {
-      background: rgba(72, 75, 82, .5);
+      background: rgba(72, 75, 82, 1);
       border-radius: 7px; 
+      // border: 2px solid inherit;
+
   }
 }
 

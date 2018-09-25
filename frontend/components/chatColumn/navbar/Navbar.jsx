@@ -71,7 +71,7 @@ class Navbar extends React.Component {
 
 
     return (
-      <header className="room-header">
+      <header className="room-header" style={{ backgroundColor: '#36393F' }}>
         <aside className="header-title">
           <div id="pound">#</div>
           <span id="room-name">{this.props.roomName}</span>

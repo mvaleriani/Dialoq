@@ -10,7 +10,7 @@ class RoomBody extends React.Component {
 
   render(){
     return (
-      <section className="room-body">
+      <section className="room-body" style={{ backgroundColor: '#36393F'}}>
         <MessageIndexContainer />
         <MessageFormContainer />
       </section>

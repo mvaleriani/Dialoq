@@ -76,7 +76,7 @@ class MessageIndex extends React.Component {
 
               <div className="content">
                 <div className="header">
-                  <span className="message-usename">{this.props.serverMembers[message.user_id].username}</span>
+                  <span className="message-usename" style={{fontWeight: 500}}>{this.props.serverMembers[message.user_id].username}</span>
 
                 </div>
                 {messageBody}

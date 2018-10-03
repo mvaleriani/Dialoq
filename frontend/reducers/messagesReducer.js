@@ -5,6 +5,7 @@ import { RECEIVE_MESSAGE } from '../actions/messageActions'
 
 const messagesReducer = (oldState = {}, action) => {
   Object.freeze(oldState);
+  
   switch (action.type) {
     case RECEIVE_ROOM_MESSAGES:
       return merge({}, action.messages);

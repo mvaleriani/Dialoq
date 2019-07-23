@@ -217,7 +217,7 @@ button:focus {outline:0;}
   display: flex;
   align-items: center;
   justify-content: center;
-  background-color: #031e30;
+  background: linear-gradient(0deg, rgba(38,38,42,1) 0%, rgba(2,55,66,1) 100%);
   position: relative;
   overflow: hidden;
   height: 100vh;
@@ -1209,9 +1209,6 @@ button:focus {outline:0;}
         background-color: #53DD6C;
       }
     }
-    .profile-icon:hover{
-      cursor: pointer;
-    }
 
     .user-info{
       display: flex;
@@ -1232,10 +1229,12 @@ button:focus {outline:0;}
       background-color: transparent;
       border-color: transparent;
       // overflow: hidden;
+      cursor: auto;
     }
-    button:hover{
+    #account-settings:hover{
       background-color: #484B51;
       border-color: #484B51;
+      cursor: pointer;
     }
     .settings{
       margin-right: 10px;
@@ -1400,6 +1399,7 @@ button:focus {outline:0;}
     align-items: center;
     overflow: hidden;
 
+    text-decoration: none;
 
     height: 50px;
     width: 50px;

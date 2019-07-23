@@ -1,6 +1,3 @@
-fetchFriends
-addFriend
-
 export const fetchFriends = () => (
   $.ajax({
     method: 'GET',

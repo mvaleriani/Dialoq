@@ -23,9 +23,9 @@ class MessageForm extends React.Component {
     }
   }
 
-  updateCurrentMessage(event) {
+  updateCurrentMessage(e) {
     this.setState({
-      currentMessage: event.target.value
+      currentMessage: e.target.value
     });
   }
 
@@ -44,21 +44,23 @@ class MessageForm extends React.Component {
   }
 
   createSocket(){
-    let channelKey = this.props.match.params.serverId + '_' + this.props.match.params.roomId;
-    this.cable = ActionCable.createConsumer('ws://'+window.location.host+'/cable');
-    this.chats = this.cable.subscriptions.create({
-      channel: 'ChatChannel',
-      server_room: channelKey
-    }, {
-      connected: () => {},
+    if (this.props.match.params.serverId !== undefined && this.props.match.params.roomId !== undefined) {
+        let channelKey = this.props.match.params.serverId + '_' + this.props.match.params.roomId;
+      this.cable = ActionCable.createConsumer('ws://'+window.location.host+'/cable');
+      this.chats = this.cable.subscriptions.create({
+        channel: 'ChatChannel',
+        server_room: channelKey
+      }, {
+        connected: () => {},
 
-      create: function(currentUserId, messageBody, currentRoomId){
-        this.perform('create', { userId: currentUserId,
-          body: messageBody,
-          roomId: currentRoomId
-        });
-      }
-    });
+        create: function(currentUserId, messageBody, currentRoomId){
+          this.perform('create', { userId: currentUserId,
+            body: messageBody,
+            roomId: currentRoomId
+          });
+        }
+      });
+    }
   }
 
   deleteSocket(){

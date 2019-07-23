@@ -10,20 +10,22 @@ class Index extends React.Component {
     this.handleRoomClick = this.handleRoomClick.bind(this);
   }
 
-  componentDidMount() {
-
-  }
-  componentWillReceiveProps(nextProps){
-
-  }
-
-  handleChategoryClick(e){
-    e.preventDefault();
+  componentDidUpdate(prevProps) {
+    if (this.props.rooms.length) {
+      let newRooms = this.props.rooms.map(room => room.id);
+      if (prevProps.rooms[0] === undefined || newRooms[0] != prevProps.rooms[0].id) {
+        document.getElementById('account-footer')
+          .parentNode
+          .children[1]
+          .children[0]
+          .click()
+      }
+    }
   }
 
   handleRoomClick(e){
-    if (e.target.currentTarget){
-      if (e.target.currentTarget.id != this.props.match.params.roomId) {
+    if (e.target){
+      if (e.target.id != this.props.match.params.roomId) {
         this.props.clearMessages({});
       }
     }

@@ -6,7 +6,10 @@ import {fetchRoomMessages} from '../../../../../actions/roomActions'
 import {receiveMessage} from '../../../../../actions/messageActions'
 
 const mapStateToProps = (state, ownProps) => {
-  return {messages: Object.values(state.messages), serverMembers: state.serverMembers}
+  return {
+    messages: Object.values(state.messages), 
+    serverMembers: state.serverMembers,
+  }
 };
 
 const mapDispatchToProps = dispatch => ({

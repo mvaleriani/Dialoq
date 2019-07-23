@@ -2,11 +2,15 @@ import { connect } from 'react-redux';
 import React from 'react';
 import ServerColumn from './ServerColumn';
 import {fetchServerMembers, fetchUserServers, createServer, removeServerMembership} from '../../actions/serverActions';
-import {fetchServerRooms, fetchPMRooms, clearRooms, clearMessages} from '../../actions/roomActions';
+import {fetchServerRooms, fetchPMRooms, clearRooms, clearMessages, fetchRoomMessages} from '../../actions/roomActions';
+import {changeServer} from '../../actions/uiActions'
 import {withRouter} from 'react-router';
 
 const mapStateToProps = (state, ownProps) => {
-  return {servers: Object.keys(state.servers).map(id => state.servers[id])}
+  return {
+    servers: Object.keys(state.servers).map(id => state.servers[id]),
+    
+  }
 };
 
 const mapDispatchToProps = dispatch => ({

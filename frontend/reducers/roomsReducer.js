@@ -1,5 +1,6 @@
 import merge from 'lodash/merge';
 
+import { fetchRoomMessages } from '../util/roomAPIUtil'
 import { RECEIVE_SERVER_ROOMS,
          RECEIVE_SERVER_ROOM } from '../actions/roomActions'
 

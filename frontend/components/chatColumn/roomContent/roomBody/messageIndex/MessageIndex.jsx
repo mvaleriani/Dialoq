@@ -20,6 +20,7 @@ class MessageIndex extends React.Component {
       this.props.fetchRoomMessages(newProps.match.params.roomId).then()
       // this.createSocket();
     }
+    
   }
 
   componentDidUpdate(prevProps){
@@ -28,21 +29,22 @@ class MessageIndex extends React.Component {
     }
     let index = document.getElementById('message-index');
     index.scrollTo({top: index.scrollHeight, behavior:'instant'})
-
   }
 
   createSocket(){
-    let channelKey = this.props.match.params.serverId + '_' + this.props.match.params.roomId;
-    this.cable = ActionCable.createConsumer('ws://'+window.location.host+'/cable');
-    this.chats = this.cable.subscriptions.create({
-      channel: 'ChatChannel',
-      server_room: channelKey
-    }, {
-      connected: () => {},
-      received: (data) => {
-        this.props.receiveMessage(data);
-      }
-    });
+    if (this.props.match.params.serverId !== undefined && this.props.match.params.roomId !== undefined) {
+      let channelKey = this.props.match.params.serverId + '_' + this.props.match.params.roomId;
+      this.cable = ActionCable.createConsumer('ws://'+window.location.host+'/cable');
+      this.chats = this.cable.subscriptions.create({
+        channel: 'ChatChannel',
+        server_room: channelKey
+      }, {
+        connected: () => {},
+        received: (data) => {
+          this.props.receiveMessage(data);
+        }
+      });
+    }
   }
 
   render(){

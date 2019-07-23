@@ -2,10 +2,8 @@ import React from 'react';
 import { loadAnimation, setSpeed, playSegments, goToAndPlay, goToAndStop, play } from 'lottie-web';
 import { Link } from 'react-router-dom';
 import { Collapse } from 'react-collapse';
-// { loadAnimation, setSpeed, playSegments, goToAndPlay }
-// import ServerNode from './ServerNode';
 import CreateServerFormContainer from './serverForm/CreateServerFormContainer';
-// import CreatePostFormContainer from './create_post_form_container';
+import ServerNode from './ServerNode';
 
 class ServerColumn extends React.Component {
   constructor(props){
@@ -26,9 +24,10 @@ class ServerColumn extends React.Component {
     
 
     if (this.props.match.path !== '/home') {
-      this.props.fetchServerRooms(this.props.match.params.serverId);
-      this.props.fetchServerMembers(this.props.match.params.serverId);
+      // this.props.fetchServerRooms(this.props.match.params.serverId);
+      // this.props.fetchServerMembers(this.props.match.params.serverId);
     } else {
+
       // this.props.fetchPMRooms();
     }
 
@@ -65,8 +64,25 @@ class ServerColumn extends React.Component {
       }
     });
     if (this.state.serverUI != serverUI){
-      // debugger;
       this.setState({serverUI})
+    }
+  }
+
+  componentDidUpdate(prevProps, prevState) {
+    if (prevProps.servers.length === 0 && this.props.servers.length > 0) {
+      document.getElementById('server-list').children[0].click();
+    }
+    
+    // debugger
+    if (Object.keys(prevState.serverUI).length === 0 && Object.keys(this.state.serverUI).length > 0){
+      document.getElementById('server-list').children[0].click();
+    }
+  }
+
+  componentWillUnmount(){
+    if (this.props.servers.length > 0) {
+      this.props.clearRooms({});
+      this.props.clearMessages({});
     }
   }
 
@@ -85,11 +101,9 @@ class ServerColumn extends React.Component {
   }
 
   handleServerClick(e){
-    if (this.props.match.params.serverId !== e.target.id) {
-      this.props.clearMessages({});
-      this.props.fetchServerRooms(e.target.id);
-      this.props.fetchServerMembers(e.target.id);
-    } 
+    this.props.clearMessages({});
+    this.props.fetchServerRooms(e.target.id);
+    this.props.fetchServerMembers(e.target.id);
   }
 
   handlePMClick(e){
@@ -98,27 +112,36 @@ class ServerColumn extends React.Component {
     // this.props.fetchPMRooms();
   }
 
+  createDefaultIcon (e) {
+    debugger;
+    let newIcon = <div>{e.target.title[0].toUpperCase()}</div>
+    
+  }
+
   render() {
     let selectedServer = {borderRadius: '15px', animation:'none'};
     let selected = {};
     let selectPointer = {};
     const serverNodes = this.props.servers.map(server => { 
-      if(this.state.serverUI[server.id]){
-        selected = selectedServer;
-        selectPointer = (<div style={{ height: "40px", width: '5px', background: 'rgb(0, 150, 148)', position: 'absolute', borderBottomRightRadius: '7px', borderTopRightRadius: '7px', left: '0px'}}></div>) 
-      }else{
-        selected = {};
-        selectPointer = "";
-      }
+      // if(this.state.serverUI[server.id]){
+      //   selected = selectedServer;
+      //   selectPointer = (<div style={{ height: "40px", width: '5px', background: 'rgb(0, 150, 148)', position: 'absolute', borderBottomRightRadius: '7px', borderTopRightRadius: '7px', left: '0px'}}></div>) 
+      // }else{
+      //   selected = {};
+      //   selectPointer = "";
+      // }
+      let node = <ServerNode server={server} handleServerClick={this.handleServerClick}/>
+
       return (
-        <Link to={`/server/${server.id}`} onClick={this.handleServerClick} className="server-node" style={selected} id={server.id} key={server.id}>
-              <img src={server.icon_url} id={server.id}/>
-              <span className="server-tag">{server.name}</span>
-              {selectPointer}
-        </Link>
+        // <Link to={`/server/${server.id}`} onClick={this.handleServerClick} className="server-node" style={selected} id={server.id} key={server.id}>
+        //       <img src={server.icon_url} id={server.id} onError={this.createDefaultIcon} title={server.name}/>
+        //       <span className="server-tag">{server.name}</span>
+        //       {selectPointer}
+        // </Link>
+        node
       );
     });
-
+    // debugger
     let homeSelect = {};
     let homeSelectStyle = {};    
     if (this.props.match.path == '/home') {
@@ -133,12 +156,14 @@ class ServerColumn extends React.Component {
         <Link to="/home" onClick={this.handlePMClick} className="server-node" style={homeSelectStyle}>
             <img id="private-messages-icon" src="https://i.imgur.com/uNY8jM2.png" draggable="false"/>
             <span className="server-tag">Home</span>
-            {homeSelect}
+            { homeSelect }
         </Link>
+
         <div className="num-online" ><span>SERVERS</span></div>
         <section id="server-list" >
-          {serverNodes}
+          { serverNodes }
         </section>
+
         <div style={{flex: 1}}>
           <button id="add-server-button" onClick={this.handleAddServerClick}></button>
         </div>
@@ -148,22 +173,6 @@ class ServerColumn extends React.Component {
         </Collapse>
       </nav>
     );
-    // const serverNodes = this.props.servers.map(server => {
-    //   return (
-    //     <ServerNode
-    //       key={server.id}
-    //       server={server} />
-    //   );
-    // });
-    //
-    // return (
-    //   <div>
-    //     <ul>
-    //       {serverNodes}
-    //     </ul>
-    //     <CreateServerFormContainer />
-    //   </div>
-    // );
   }
 }
 

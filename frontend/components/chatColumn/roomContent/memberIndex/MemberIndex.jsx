@@ -26,7 +26,7 @@ class MemberIndex extends React.Component {
     if (this.props.onlineMembers.length > 0) {
       onlineMembers = this.props.onlineMembers.map(user => {
         return (
-          <section className="member">
+          <section className="member" key={`member-${user.id}`}>
             <div className="profile-icon">
               <img src={user.image_url}/>
               <aside className="online-status"></aside>
@@ -43,7 +43,7 @@ class MemberIndex extends React.Component {
       offlineMembers = this.props.offlineMembers.map(user => {
 
         return (
-          <section className="member">
+          <section className="member" key={`member-${user.id}`}>
             <div className="profile-icon">
               <img src={user.image_url}/>
               <aside style={red} className="online-status"></aside>

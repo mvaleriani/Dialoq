@@ -71,7 +71,7 @@ class MessageIndex extends React.Component {
             );
           }
           messages.push(
-          <section className="message">
+          <section className="message" key={`message-${message.id}`}>
 
               <div className="icon">
                 <img src={this.props.serverMembers[userId].image_url}/>

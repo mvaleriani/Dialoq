@@ -36,7 +36,7 @@ class Index extends React.Component {
     const rooms = this.props.rooms.map(room => {
 
       return(
-        <NavLink activeClassName="selected-room" id={room.id} onClick={this.handleRoomClick} className="room-link" to={`/server/${room.server_id}/room/${room.id}`}>
+        <NavLink activeClassName="selected-room" id={room.id} key={`room-${room.id}`} onClick={this.handleRoomClick} className="room-link" to={`/server/${room.server_id}/room/${room.id}`}>
           <span># </span>{room.name}
         </NavLink>
       );

@@ -24,21 +24,45 @@ class ServerNode extends React.Component {
     }
 
     componentDidMount () {
-        
+        let outside;
+        fetch("http://www.direcorgi.com/assets/images/corgi-icon.png", {"Access-Control-Allow-Origin": "*"}).then(
+            (response) => {
+                if (response.status !== 200) {
+                    console.log('Looks like there was a problem. Status Code: ' +
+                        response.status);
+                    return;
+                }
+
+                response.blob().then((image) => {
+                    outside = URL.createObjectURL(images)
+
+                    console.log(image)
+                    console.log(outside)
+                });
+            }
+        )
+        // fetch(this.props.server.icon_url)
+        //     //                         vvvv
+        //     .then(response => response.blob())
+        //     .then(images => {
+        //         // Then create a local URL for that image and print it 
+        //         outside = URL.createObjectURL(images)
+        //         console.log(outside)
+        //     })
     }
 
     componentDidUpdate () {
 
-        let context = this
+        // let context = this
 
-        if (this.state.imageIcon) {
-            setTimeout(()=>{
-                let el = document.querySelector(`.icon_${context.props.server.id}`)
-                if (el && !el.complete) {
-                    context.setState({ imageIcon: null, fallbackIcon: this.makeDefaultIcon() })
-                } 
-            }, 250)
-        } 
+        // if (this.state.imageIcon) {
+        //     setTimeout(()=>{
+        //         let el = document.querySelector(`.icon_${context.props.server.id}`)
+        //         if (el && !el.complete) {
+        //             context.setState({ imageIcon: null, fallbackIcon: this.makeDefaultIcon() })
+        //         } 
+        //     }, 250)
+        // } 
     }
 
     makeDefaultIcon (e) {
